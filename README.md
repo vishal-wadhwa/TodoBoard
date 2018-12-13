@@ -1,4 +1,5 @@
 # cardboard
+Inspiration: [this](https://dribbble.com/shots/5421211-Progress-Board-Interface-for-Education-Platform/attachments)
 
 ## Project setup
 ```

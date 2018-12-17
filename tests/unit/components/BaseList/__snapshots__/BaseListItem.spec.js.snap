@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseListItem.vue should match compact view snapshot 1`] = `
+<vcontainer-stub tag="div" fluid="" class="pa-1">
+  <vcard-stub tag="div">
+    <vlayout-stub tag="div" row="" align-start="" class="pa-2 bli-ribbon-style">
+      <vicon-stub>assignment</vicon-stub>
+      <vflex-stub tag="div" align-self-center="" class="mt-1 mx-2">
+        <vcardtitle-stub class="title pa-0 font-weight-regular">Note1</vcardtitle-stub>
+        <!---->
+        <!---->
+        <!---->
+      </vflex-stub>
+    </vlayout-stub>
+  </vcard-stub>
+</vcontainer-stub>
+`;
+
+exports[`BaseListItem.vue should match new view snapshot 1`] = `
+<vcontainer-stub tag="div" fluid="" class="pa-1">
+  <vcard-stub flat="true" tag="div" tile="true">
+    <vcardactions-stub class="bli-new--border pa-0">
+      <vbtn-stub activeclass="v-btn--active" block="true" depressed="true" flat="true" tag="button" type="button" class="bli-new--height px-0">
+        <vicon-stub>note_add</vicon-stub>
+        Note1
+      </vbtn-stub>
+    </vcardactions-stub>
+  </vcard-stub>
+</vcontainer-stub>
+`;

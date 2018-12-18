@@ -2,7 +2,12 @@
   <v-container fluid>
     <div class='headline mb-3 font-weight-light'>
       {{header}}
-      <v-avatar :color='highlightColor' size='30' class='white--text ml-3'>{{dataList.length}}</v-avatar>
+      <v-avatar
+        :color='highlightColor'
+        size='30'
+        class='white--text ml-3'
+        v-if='showCount'
+      >{{dataList.length}}</v-avatar>
     </div>
     <base-list-item
       @bli:click='(data, ev) => onItemClickHandler(item._id, data, ev)'

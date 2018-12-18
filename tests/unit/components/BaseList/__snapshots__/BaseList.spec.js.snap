@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseList.vue should match snapshot 1`] = `
+<vcontainer-stub tag="div" fluid="">
+  <div class="headline mb-3 font-weight-light">
+    List1
+    <vavatar-stub color="black" size="30" class="white--text ml-3">3</vavatar-stub>
+  </div>
+  <baselistitem-stub type="assignment" title="sanmu" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" view="full" ribboncolor="black" tags="fa,jebpu"></baselistitem-stub>
+  <baselistitem-stub type="assignment" title="iz" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" view="full" ribboncolor="black" tags="sikgaok,co"></baselistitem-stub>
+  <baselistitem-stub type="assignment" title="duzjukve" desc="giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun" view="full" ribboncolor="black" tags="magew,wobsudig"></baselistitem-stub>
+  <baselistitem-stub type="assignment" title="Create new" view="new" ribboncolor="black" tags=""></baselistitem-stub>
+</vcontainer-stub>
+`;

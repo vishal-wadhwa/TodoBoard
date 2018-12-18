@@ -62,6 +62,7 @@ export default {
         }
       })
       ob['desc'] = ob['desc'].join(' ')
+      ob['_id'] = Math.random() * 100 >> 0
       this.list.push(ob)
     }
   }

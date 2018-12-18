@@ -2,6 +2,7 @@ import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import BaseListItem from '@/components/BaseList/BaseListItem'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
+// import VChip from 'vuetify/lib/components/VChip'
 Vue.use(Vuetify)
 
 describe('BaseListItem.vue', () => {
@@ -88,14 +89,14 @@ describe('BaseListItem.vue', () => {
     expect(emitObj[0][0]).toEqual(wrapper.props())
   })
 
-  // skipping this test because of undeterministic nature
-  // of tag colors
-  it.skip('should match full view snapshot', () => {
+  it('should match full view snapshot', () => {
     const view = 'full'
     const wrapper = factory({
       propsData: { title, tags, desc, view }
     })
-
+    wrapper.setMethods({
+      tagColor: () => 'primary'
+    })
     expect(wrapper.html()).toMatchSnapshot()
   })
 

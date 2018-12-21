@@ -60,20 +60,13 @@ describe('BaseList.vue', () => {
     expect(avatarWrapper.exists()).toBeFalsy()
   })
 
-  // can't get this to work
-  it.skip('renders only 1 new list item when list is not passed', () => {
+  it('renders only 1 new list item when list is not passed', () => {
     const wrapper = factory({
-      propsData: { header },
-      localVue,
-      stubs: {
-        transition: false,
-        'base-list-item': true
-      }
-    }, true)
+      propsData: { header }
+    })
     const baseListItems = wrapper.findAll(BaseListItem)
     expect(baseListItems.length).toEqual(1)
-    console.log(JSON.stringify(baseListItems[0]))
-    expect(baseListItems[0].vm.$props['view']).toEqual('new')
+    expect(baseListItems.at(0).vm.$props['view']).toEqual('new')
   })
 
   it('renders a list of correct length and count is reflected in the list counter', () => {
@@ -87,13 +80,16 @@ describe('BaseList.vue', () => {
     expect(avatarWrapper.text()).toMatch(list.length + '')
   })
 
-  // not updating synchronously dunno why
-  it.skip('updates list items and count when list prop is updated', () => {
+  // not updating synchronously because of [this](https://github.com/vuejs/vue-test-utils/issues/676)
+  // nextTick also not working. Had to use setTimeout.
+  it('updates list items and count when list prop is updated', () => {
     let listCopy = list.slice(1)
     const wrapper = factory({
       propsData: { header, list: listCopy },
       localVue
+      // sync: false
     })
+
     let baseListItems = wrapper.findAll(BaseListItem)
     expect(baseListItems.length).toEqual(1 + listCopy.length)
     let avatarWrapper = wrapper.find('div.headline :first-child')
@@ -106,37 +102,45 @@ describe('BaseList.vue', () => {
       'tags': ['ceto', 'pumagop']
     })
 
-    baseListItems = wrapper.findAll(BaseListItem)
-    expect(baseListItems.length).toEqual(1 + listCopy.length)
-    avatarWrapper = wrapper.find('div.headline :first-child')
-    expect(avatarWrapper.text()).toMatch(listCopy.length + '')
+    // return Vue.nextTick().then(() => {
+    setTimeout(() => {
+      baseListItems = wrapper.findAll(BaseListItem)
+      expect(baseListItems.length).toEqual(1 + listCopy.length)
+      avatarWrapper = wrapper.find('div.headline :first-child')
+      expect(avatarWrapper.text()).toMatch(listCopy.length + '')
+    }, 0)
+    // })
   })
 
-  // same issue child componenent not mounting
-  it.skip('emits "bl:click" with that item\'s payload on clicking the item', () => {
+  it('emits "bl:click" with that item\'s payload on clicking the item', () => {
     const wrapper = factory({
       propsData: { header, list },
       localVue
     }, true)
-    let baseListItems = wrapper.findAll(BaseListItem)
-    // baseListItems.pop()
+
+    const baseListItems = wrapper.findAll(BaseListItem)
     const idx = Math.random() * (baseListItems.length - 1) >> 0
-    const someListItem = baseListItems[idx]
+    const someListItem = baseListItems.at(idx)
+
     someListItem.trigger('click')
+
     const emitObj = wrapper.emitted('bl:click')
     expect(emitObj).toBeTruthy()
     expect(emitObj[0][0]).toEqual(list[idx])
   })
 
   // same issue child componenent not mounting
-  it.skip('emits "bl:add" on clicking the last list item', () => {
+  it('emits "bl:add" on clicking the last list item', () => {
     const wrapper = factory({
       propsData: { header, list },
       localVue
     }, true)
 
-    const lastItem = wrapper.findAll(BaseListItem).pop()
+    const listOfItemWrappers = wrapper.findAll(BaseListItem)
+    const lastItem = listOfItemWrappers.at(listOfItemWrappers.length - 1)
+
     lastItem.trigger('click')
+
     const emitObj = wrapper.emitted('bl:add')
     expect(emitObj).toBeTruthy()
   })

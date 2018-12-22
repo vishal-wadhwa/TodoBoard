@@ -1,49 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseListItem.vue should match compact view snapshot 1`] = `
-<vcontainer-stub tag="div" fluid="" class="pa-1">
-  <vcard-stub tag="div">
-    <vlayout-stub tag="div" row="" align-start="" class="pa-2 bli-ribbon-style">
-      <vicon-stub>assignment</vicon-stub>
-      <vflex-stub tag="div" align-self-center="" class="mt-1 mx-2">
-        <vcardtitle-stub class="title pa-0 font-weight-regular">Note1</vcardtitle-stub>
+<div class="container pa-1 fluid">
+  <div class="v-card theme--light">
+    <div class="layout pa-2 bli-ribbon-style row align-start" style="border-left-color: black;"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment</i>
+      <div class="flex mt-1 mx-2 align-self-center">
+        <div class="v-card__title title pa-0 font-weight-regular">Note1</div>
         <!---->
         <!---->
         <!---->
-      </vflex-stub>
-    </vlayout-stub>
-  </vcard-stub>
-</vcontainer-stub>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`BaseListItem.vue should match full view snapshot 1`] = `
-<vcontainer-stub tag="div" fluid="" class="pa-1">
-  <vcard-stub tag="div">
-    <vlayout-stub tag="div" row="" align-start="" class="pa-2 bli-ribbon-style">
-      <vicon-stub>assignment</vicon-stub>
-      <vflex-stub tag="div" align-self-center="" class="mt-1 mx-2">
-        <vcardtitle-stub class="title pa-0 font-weight-regular">Note1</vcardtitle-stub>
-        <vdivider-stub class="my-2"></vdivider-stub>
-        <vcardtext-stub texttruncate="" text-truncate="" class="ml-1 pa-0">random desc</vcardtext-stub>
-        <vcardtext-stub class="pa-0">
-          <vchip-stub label="true" small="true" textcolor="white" value="true" color="primary">Lesson1</vchip-stub>
-          <vchip-stub label="true" small="true" textcolor="white" value="true" color="primary">Lesson2</vchip-stub>
-        </vcardtext-stub>
-      </vflex-stub>
-    </vlayout-stub>
-  </vcard-stub>
-</vcontainer-stub>
+<div class="container pa-1 fluid">
+  <div class="v-card theme--light">
+    <div class="layout pa-2 bli-ribbon-style row align-start" style="border-left-color: black;"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment</i>
+      <div class="flex mt-1 mx-2 align-self-center">
+        <div class="v-card__title title pa-0 font-weight-regular">Note1</div>
+        <hr class="my-2 v-divider theme--light">
+        <div text-truncate="" class="v-card__text ml-1 pa-0">random desc</div>
+        <div class="v-card__text pa-0"><span tabindex="0" class="v-chip v-chip--label v-chip--small theme--light primary white--text"><span class="v-chip__content">Lesson1</span></span><span tabindex="0" class="v-chip v-chip--label v-chip--small theme--light primary white--text"><span class="v-chip__content">Lesson2</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`BaseListItem.vue should match new view snapshot 1`] = `
-<vcontainer-stub tag="div" fluid="" class="pa-1">
-  <vcard-stub flat="true" tag="div" tile="true">
-    <vcardactions-stub class="bli-new--border pa-0">
-      <vbtn-stub activeclass="v-btn--active" block="true" depressed="true" flat="true" tag="button" type="button" class="bli-new--height px-0">
-        <vicon-stub>note_add</vicon-stub>
-        Note1
-      </vbtn-stub>
-    </vcardactions-stub>
-  </vcard-stub>
-</vcontainer-stub>
+<div class="container pa-1 fluid">
+  <div class="v-card v-card--flat v-card--tile theme--light">
+    <div class="v-card__actions bli-new--border pa-0"><button type="button" class="bli-new--height px-0 v-btn v-btn--block v-btn--flat theme--light">
+        <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">note_add</i>
+          Note1
+        </div>
+      </button></div>
+  </div>
+</div>
 `;

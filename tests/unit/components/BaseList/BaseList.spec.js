@@ -147,8 +147,11 @@ describe('BaseList.vue', () => {
 
   it('should match snapshot', () => {
     const wrapper = factory({
-      propsData: { header, list }
-    })
+      propsData: { header, list },
+      stubs: {
+        'base-list-item': '<div></div>'
+      }
+    }, true)
 
     expect(wrapper.html()).toMatchSnapshot()
   })

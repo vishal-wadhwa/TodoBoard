@@ -92,11 +92,12 @@ describe('BaseListItem.vue', () => {
   it('should match full view snapshot', () => {
     const view = 'full'
     const wrapper = factory({
-      propsData: { title, tags, desc, view }
-    })
-    wrapper.setMethods({
-      tagColor: () => 'primary'
-    })
+      propsData: { title, tags, desc, view },
+      methods: {
+        tagColor: () => 'primary'
+      }
+    }, true)
+
     expect(wrapper.html()).toMatchSnapshot()
   })
 
@@ -104,7 +105,7 @@ describe('BaseListItem.vue', () => {
     const view = 'new'
     const wrapper = factory({
       propsData: { title, tags, desc, view }
-    })
+    }, true)
 
     expect(wrapper.html()).toMatchSnapshot()
   })
@@ -113,7 +114,7 @@ describe('BaseListItem.vue', () => {
     const view = 'compact'
     const wrapper = factory({
       propsData: { title, tags, desc, view }
-    })
+    }, true)
 
     expect(wrapper.html()).toMatchSnapshot()
   })

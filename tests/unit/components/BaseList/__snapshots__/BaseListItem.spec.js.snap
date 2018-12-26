@@ -5,7 +5,9 @@ exports[`BaseListItem.vue should match compact view snapshot 1`] = `
   <div class="v-card theme--light">
     <div class="layout pa-2 bli-ribbon-style row align-start" style="border-left-color: black;"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment</i>
       <div class="flex mt-1 mx-2 align-self-center">
-        <div class="v-card__title title pa-0 font-weight-regular">Note1</div>
+        <div class="title font-weight-regular">
+          <div class="v-card__title pa-0">Note1</div>
+        </div>
         <!---->
         <!---->
         <!---->
@@ -20,7 +22,9 @@ exports[`BaseListItem.vue should match full view snapshot 1`] = `
   <div class="v-card theme--light">
     <div class="layout pa-2 bli-ribbon-style row align-start" style="border-left-color: black;"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment</i>
       <div class="flex mt-1 mx-2 align-self-center">
-        <div class="v-card__title title pa-0 font-weight-regular">Note1</div>
+        <div class="title font-weight-regular">
+          <div class="v-card__title pa-0">Note1</div>
+        </div>
         <hr class="my-2 v-divider theme--light">
         <div text-truncate="" class="v-card__text ml-1 pa-0">random desc</div>
         <div class="v-card__text pa-0"><span tabindex="0" class="v-chip v-chip--label v-chip--small theme--light primary white--text"><span class="v-chip__content">Lesson1</span></span><span tabindex="0" class="v-chip v-chip--label v-chip--small theme--light primary white--text"><span class="v-chip__content">Lesson2</span></span></div>

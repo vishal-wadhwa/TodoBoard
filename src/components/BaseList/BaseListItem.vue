@@ -7,32 +7,44 @@
         :style='{borderLeftColor: ribbonColor}'
         class='pa-2 bli-ribbon-style'
       >
-        <v-icon>{{type}}</v-icon>
+        <slot name='vf-icon' :type='type'>
+          <v-icon>{{type}}</v-icon>
+        </slot>
         <v-flex align-self-center class='mt-1 mx-2'>
-          <v-card-title class='title pa-0 font-weight-regular'>{{title}}</v-card-title>
+          <div class='title font-weight-regular'>
+            <slot name='vf-title' :title='title' :view='view'>
+              <v-card-title class='pa-0'>{{title}}</v-card-title>
+            </slot>
+          </div>
           <v-divider class='my-2' v-if='!isCompactView'></v-divider>
           <v-card-text text-truncate class='ml-1 pa-0' v-if='!isCompactView'>{{desc}}</v-card-text>
           <v-card-text class='pa-0' v-if='!isCompactView'>
-            <v-chip
-              v-for='(tag, idx) in tags'
-              :key='idx'
-              small
-              label
-              :color='tagColor()'
-              text-color='white'
-            >{{tag}}</v-chip>
+            <slot name='tags' :title='title' :tags='tags'>
+              <v-chip
+                v-for='(tag, idx) in tags'
+                :key='idx'
+                small
+                label
+                :color='tagColor()'
+                text-color='white'
+              >{{tag}}</v-chip>
+            </slot>
           </v-card-text>
         </v-flex>
       </v-layout>
     </v-card>
-    <v-card flat tile v-else>
-      <v-card-actions class='bli-new--border pa-0'>
-        <v-btn flat depressed block class='bli-new--height px-0'>
-          <v-icon>note_add</v-icon>
-          {{title}}
-        </v-btn>
-      </v-card-actions>
-    </v-card>
+    <slot v-else name='vn-body' :title='title' :view='view'>
+      <v-card flat tile>
+        <v-card-actions class='bli-new--border pa-0'>
+          <v-btn flat depressed block class='bli-new--height px-0'>
+            <slot name='vn-content' :title='title' :view='view'>
+              <v-icon>note_add</v-icon>
+              {{title}}
+            </slot>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </slot>
   </v-container>
 </template>
 <script>
@@ -89,7 +101,7 @@ export default {
   },
   computed: {
     isCompactView () {
-      return this.view === this.COMPACT_VIEW
+      return this.view === this.COMPACT_VIEW || ((!this.tags || this.tags.length === 0) && !this.desc)
     },
     isNewView () {
       return this.view === this.NEW_VIEW

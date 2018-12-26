@@ -1,14 +1,16 @@
 <template>
   <v-container fluid>
-    <div class='headline mb-3 font-weight-light'>
-      {{header}}
-      <v-avatar
-        :color='highlightColor'
-        size='30'
-        class='white--text ml-3'
-        v-if='showCount'
-      >{{dataList.length}}</v-avatar>
-    </div>
+    <slot name='header' :header='header' :len='dataList.length' :show-count='showCount'>
+      <div class='headline mb-3 font-weight-light'>
+        {{header}}
+        <v-avatar
+          :color='highlightColor'
+          size='30'
+          class='white--text ml-3'
+          v-if='showCount'
+        >{{dataList.length}}</v-avatar>
+      </div>
+    </slot>
     <base-list-item
       @bli:click='(data, ev) => onItemClickHandler(item._id, data, ev)'
       v-for='item in dataList'
@@ -19,7 +21,9 @@
       :ribbon-color='highlightColor'
       :view='item.view || "full"'
     ></base-list-item>
-    <base-list-item view='new' title='Create new' @bli:click='onItemAddHandler'></base-list-item>
+    <slot name='new-item'>
+      <base-list-item view='new' title='Create new' @bli:click='onItemAddHandler'></base-list-item>
+    </slot>
   </v-container>
 </template>
 <script>

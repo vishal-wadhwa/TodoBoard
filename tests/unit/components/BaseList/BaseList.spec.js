@@ -21,12 +21,14 @@ describe('BaseList.vue', () => {
     'title': 'sanmu',
     'desc': 'oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej',
     'tags': ['fa', 'jebpu'],
-    '_id': 87
+    '_id': 87,
+    'type': 'list'
   }, {
     'title': 'iz',
     'desc': 'vuha ogpufub in jufwozi mira ep po gozseic burni zictam',
     'tags': ['sikgaok', 'co'],
-    '_id': 21
+    '_id': 21,
+    'type': 'playlist_play'
   }, {
     'title': 'duzjukve',
     'desc': 'giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun',
@@ -99,7 +101,8 @@ describe('BaseList.vue', () => {
       '_id': '29',
       'title': 'founo',
       'desc': 'pa lafapnet te safaw mitlevamu bujufput so cora kokwegti pipwos',
-      'tags': ['ceto', 'pumagop']
+      'tags': ['ceto', 'pumagop'],
+      'type': 'format_list_bulleted'
     })
 
     // return Vue.nextTick().then(() => {

@@ -6,8 +6,8 @@ exports[`BaseList.vue should match snapshot 1`] = `
     List1
     <div class="v-avatar white--text ml-3 black" style="height: 30px; width: 30px;">3</div>
   </div>
-  <div title="sanmu" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="black" view="full"></div>
-  <div title="iz" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="black" view="full"></div>
+  <div title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="black" view="full"></div>
+  <div title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="black" view="full"></div>
   <div title="duzjukve" desc="giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun" tags="magew,wobsudig" ribbon-color="black" view="full"></div>
   <div view="new" title="Create new"></div>
 </div>

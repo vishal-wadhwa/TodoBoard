@@ -16,8 +16,9 @@
       v-for='item in dataList'
       :key='item._id'
       :title='item.title'
-      :desc='item.desc || ""'
-      :tags='item.tags || []'
+      :type='item.type'
+      :desc='item.desc'
+      :tags='item.tags'
       :ribbon-color='highlightColor'
       :view='item.view || "full"'
     ></base-list-item>

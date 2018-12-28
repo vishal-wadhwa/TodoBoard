@@ -44,10 +44,10 @@
     <v-card-actions class='pt-0 pb-3'>
       <slot name='actions'>
         <v-layout justify-end>
-          <v-btn round @click='discard' color='error'>
+          <v-btn round @click='onDiscard' color='error'>
             <v-icon>clear</v-icon>&nbsp;Discard
           </v-btn>
-          <v-btn round @click='save' color='success'>
+          <v-btn round @click='onSave' color='success'>
             <v-icon>check_circle_outline</v-icon>&nbsp;Save
           </v-btn>
         </v-layout>
@@ -77,17 +77,13 @@ export default {
     }
   },
   methods: {
-    discard (ev) {
+    onDiscard (ev) {
       this.$emit('lif:discard', ev)
       this.reset()
     },
-    save (ev) {
+    onSave (ev) {
       if (!this.$refs['form'].validate()) return
-      this.$emit('lif:save', {
-        title: this.title,
-        tags: this.tagSelect,
-        desc: this.desc
-      }, ev)
+      this.$emit('lif:save', this.getItemData(), ev)
       this.reset()
     },
     reset () {
@@ -95,6 +91,13 @@ export default {
       this.tagSelect = []
       this.desc = ''
       this.$refs['form'].reset()
+    },
+    getItemData () {
+      return {
+        title: this.title,
+        tags: this.tagSelect,
+        desc: this.desc
+      }
     }
   }/* ,
   created () {

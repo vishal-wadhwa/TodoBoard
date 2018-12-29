@@ -2,6 +2,12 @@
   <v-container>
     <v-layout text-xs wrap>
       <v-flex>
+        <!-- dialog test -->
+        <v-dialog max-width='800px' lazy>
+          <v-btn slot='activator' color='primary' dark>Open Dialog</v-btn>
+
+          <list-form></list-form>
+        </v-dialog>
         <!-- <list-item-form></list-item-form> -->
         <!-- <base-list-item title='Hello' :desc='txt' :tags='tags' view='new'></base-list-item> -->
         <base-list highlightColor='red' header='My first todo' :list='list' @bl:add='onAdd'>
@@ -31,10 +37,11 @@
 // import BaseListItem from './BaseList/BaseListItem'
 import BaseList from './BaseList/BaseList'
 import ListItemForm from './ListItemForm'
+import ListForm from './ListForm'
 import { randomData } from '../utils/random_data'
 
 export default {
-  components: { BaseList, ListItemForm },
+  components: { BaseList, ListItemForm, ListForm },
   data () {
     return {
       list: randomData({
@@ -56,6 +63,7 @@ export default {
       }).map(it => {
         let nit = { ...it }
         nit['desc'] = nit['desc'].join(' ')
+        nit['type'] = ['format_list_bulleted', 'list', 'playlist_play', 'assignment'][Math.random() * 4 >> 0]
         // nit["view"] = 'full'
         nit['_id'] = Math.random() * 100 >> 0
         return nit

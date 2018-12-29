@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListForm.vue should match snapshot 1`] = `
+<div class="ma-1 v-card theme--light">
+  <div class="v-card__title title">Create new list</div>
+  <hr class="v-divider theme--light">
+  <div class="v-card__text">
+    <div>
+      <div class="v-input mr-2 v-text-field v-text-field--box v-text-field--enclosed theme--light">
+        <div class="v-input__prepend-outer">
+          <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">title</i></div>
+        </div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Header</label><input aria-label="Header" autofocus="autofocus" type="text"></div>
+            <div class="v-input__append-inner">
+              <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+            </div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="v-subheader theme--light">Choose a color for your list</div>
+      <div tabindex="-1" class="vue-swatches swatches">
+        <!---->
+        <div class="vue-swatches__container vue-swatches--inline" style="background-color: rgb(255, 255, 255);" name="vue-swatches-show-hide">
+          <div class="vue-swatches__wrapper" style="padding-top: 11px; padding-left: 11px;">
+            <div class="vue-swatches__swatch vue-swatches__swatch--selected" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(244, 67, 54); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(233, 30, 99); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(156, 39, 176); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(103, 58, 183); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(63, 81, 181); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(33, 150, 243); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(3, 169, 244); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(0, 188, 212); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(0, 150, 136); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(76, 175, 80); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(139, 195, 74); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(205, 220, 57); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(255, 235, 59); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(255, 193, 7); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(255, 152, 0); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(255, 87, 34); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(121, 85, 72); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(158, 158, 158); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="vue-swatches__swatch" style="display: inline-block; width: 42px; height: 42px; margin-bottom: 11px; margin-right: 11px; border-radius: 11px; background-color: rgb(96, 125, 139); cursor: pointer;">
+              <!---->
+              <div class="vue-swatches__check__wrapper vue-swatches--has-children-centered" style="display: none;">
+                <div class="vue-swatches__check__circle vue-swatches--has-children-centered"><svg version="1.1" role="presentation" width="12" height="12" viewBox="0 0 1792 1792" class="check">
+                    <path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" class="vue-swatches__check__path"></path>
+                  </svg></div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="v-subheader theme--light">Choose a list type</div>
+      <div class="layout justify-center">
+        <div class="v-item-group transparent theme--light v-btn-toggle">
+          <div class="flex text-xs-center"><button type="button" value="assignment" class="v-btn v-btn--active v-btn--flat v-btn--large theme--light" title="assignment">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment</i></div>
+            </button><button type="button" value="list" class="v-btn v-btn--flat v-btn--large theme--light" title="list">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">list</i></div>
+            </button><button type="button" value="view_list" class="v-btn v-btn--flat v-btn--large theme--light" title="view_list">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">view_list</i></div>
+            </button><button type="button" value="playlist_add_check" class="v-btn v-btn--flat v-btn--large theme--light" title="playlist_add_check">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">playlist_add_check</i></div>
+            </button><button type="button" value="playlist_play" class="v-btn v-btn--flat v-btn--large theme--light" title="playlist_play">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">playlist_play</i></div>
+            </button><button type="button" value="alarm" class="v-btn v-btn--flat v-btn--large theme--light" title="alarm">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">alarm</i></div>
+            </button><button type="button" value="assignment_turned_in" class="v-btn v-btn--flat v-btn--large theme--light" title="assignment_turned_in">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">assignment_turned_in</i></div>
+            </button><button type="button" value="bookmark" class="v-btn v-btn--flat v-btn--large theme--light" title="bookmark">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">bookmark</i></div>
+            </button><button type="button" value="done" class="v-btn v-btn--flat v-btn--large theme--light" title="done">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">done</i></div>
+            </button><button type="button" value="done_all" class="v-btn v-btn--flat v-btn--large theme--light" title="done_all">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">done_all</i></div>
+            </button><button type="button" value="delete" class="v-btn v-btn--flat v-btn--large theme--light" title="delete">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div>
+            </button><button type="button" value="event" class="v-btn v-btn--flat v-btn--large theme--light" title="event">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">event</i></div>
+            </button><button type="button" value="info" class="v-btn v-btn--flat v-btn--large theme--light" title="info">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">info</i></div>
+            </button><button type="button" value="label" class="v-btn v-btn--flat v-btn--large theme--light" title="label">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">label</i></div>
+            </button><button type="button" value="note_add" class="v-btn v-btn--flat v-btn--large theme--light" title="note_add">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">note_add</i></div>
+            </button><button type="button" value="payment" class="v-btn v-btn--flat v-btn--large theme--light" title="payment">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">payment</i></div>
+            </button><button type="button" value="question_answer" class="v-btn v-btn--flat v-btn--large theme--light" title="question_answer">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">question_answer</i></div>
+            </button><button type="button" value="subject" class="v-btn v-btn--flat v-btn--large theme--light" title="subject">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">subject</i></div>
+            </button><button type="button" value="error" class="v-btn v-btn--flat v-btn--large theme--light" title="error">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">error</i></div>
+            </button><button type="button" value="create" class="v-btn v-btn--flat v-btn--large theme--light" title="create">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">create</i></div>
+            </button><button type="button" value="add" class="v-btn v-btn--flat v-btn--large theme--light" title="add">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add</i></div>
+            </button><button type="button" value="mail" class="v-btn v-btn--flat v-btn--large theme--light" title="mail">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">mail</i></div>
+            </button><button type="button" value="send" class="v-btn v-btn--flat v-btn--large theme--light" title="send">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">send</i></div>
+            </button><button type="button" value="attach_file" class="v-btn v-btn--flat v-btn--large theme--light" title="attach_file">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">attach_file</i></div>
+            </button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="v-card__actions pt-0 pb-3">
+    <div class="layout justify-end"><button type="button" class="v-btn v-btn--round theme--light error">
+        <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">clear</i>&nbsp;Discard
+        </div>
+      </button> <button type="button" class="v-btn v-btn--round theme--light success">
+        <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">check_circle_outline</i>&nbsp;Save
+        </div>
+      </button></div>
+  </div>
+</div>
+`;

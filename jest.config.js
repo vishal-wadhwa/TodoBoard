@@ -12,7 +12,8 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest'
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|less|styl|sass|scss)$': 'identity-obj-proxy'
   },
   snapshotSerializers: [
     'jest-serializer-vue'

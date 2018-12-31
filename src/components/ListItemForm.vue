@@ -7,10 +7,11 @@
         <slot name='form'>
           <v-text-field
             autofocus
+            validate-on-blur
             v-model='title'
             prepend-icon='title'
             box
-            :rules='[v => v && !!v.length || "Required"]'
+            :rules='[NO_BLANK_RULE]'
             clear-icon='close'
             clearable
             label='Title'
@@ -32,6 +33,8 @@
             hint='Add a tag and press enter.'
             :items='tags'
             clearable
+            validate-on-blur
+            :rules='[NO_BLANK_ELE_ARRAY_RULE]'
           >
             <div slot='label'>
               Tags
@@ -56,14 +59,18 @@
   </v-card>
 </template>
 <script>
-// import BaseListItem from './BaseList/BaseListItem'
+const NO_BLANK_RULE_GEN = msg => v => (typeof v === 'string' && !!v && !!v.trim().length) || msg
 
 export default {
   data () {
     return {
       title: '',
       tagSelect: [],
-      desc: ''
+      desc: '',
+      ERROR_MSG: 'This field must be non-empty.',
+      NO_BLANK_RULE: null,
+      ERROR_MSG_TAGS: 'Tags must be non-empty',
+      NO_BLANK_ELE_ARRAY_RULE: null
     }
   },
   props: {
@@ -94,15 +101,18 @@ export default {
     },
     getItemData () {
       return {
-        title: this.title,
-        tags: this.tagSelect,
-        desc: this.desc
+        title: this.title.trim(),
+        tags: this.tagSelect.map(v => v.trim()),
+        desc: (this.desc || '').trim()
       }
     }
-  }/* ,
+  },
   created () {
-    console.log(BaseListItem.data())
-  } */
+    this.NO_BLANK_RULE = NO_BLANK_RULE_GEN(this.ERROR_MSG)
+
+    const NO_BLANK_RULE_BOOL = NO_BLANK_RULE_GEN(false)
+    this.NO_BLANK_ELE_ARRAY_RULE = v => v.reduce((res, tag) => res && NO_BLANK_RULE_BOOL(tag), true) || this.ERROR_MSG_TAGS
+  }
 }
 </script>
 <style lang="stylus" scoped>

@@ -73,6 +73,58 @@ describe('ListItemForm.vue', () => {
     expect(emitObj).toBeUndefined()
   })
 
+  it('does not emit "lif:save" when title is empty or space-only string', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    }, true)
+
+    wrapper.setData({ title: '  ' })
+    const saveBtn = wrapper.find('button.success')
+    saveBtn.trigger('click')
+
+    const emitObj = wrapper.emitted('lif:save')
+    expect(emitObj).toBeUndefined()
+  })
+
+  it('does not emit "lif:save" when one of the tags is empty or space-only string', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    }, true)
+
+    wrapper.setData({ title: 'Note1', tagSelect: ['A', '  '] })
+    const saveBtn = wrapper.find('button.success')
+    saveBtn.trigger('click')
+
+    const emitObj = wrapper.emitted('lif:save')
+    expect(emitObj).toBeUndefined()
+  })
+
+  it('emits trimmed strings', () => {
+    const wrapper = factory({
+      localVue,
+      stubs: ['v-text-field'], // suppresses stub issues: https://github.com/vuejs/vue-test-utils/issues/890
+      sync: false
+    }, true)
+    const data = {
+      title: 'Note1',
+      tags: tags,
+      desc: 'CDE'
+    }
+    wrapper.setData({
+      title: '  ' + data['title'] + '   ',
+      tagSelect: data['tags'].map(v => '  ' + v + '\n'),
+      desc: data['desc'] + '\t\n\v'
+    })
+
+    const saveBtn = wrapper.find('button.success')
+    saveBtn.trigger('click')
+
+    const emitObj = wrapper.emitted('lif:save')[0][0]
+    expect(emitObj).toEqual(data)
+  })
+
   it('emits "lif:save" on clicking save button', () => {
     const wrapper = factory({
       localVue,

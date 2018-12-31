@@ -48,17 +48,35 @@ describe('ListForm.vue', () => {
     expect(emitObj).toBeTruthy()
   })
 
-  it('does not emit "lf:save" on clicking when header field is empty', () => {
+  it('does not emit "lf:save" on clicking when header field is empty or space-only string', () => {
     const wrapper = factory({
       localVue,
       sync: false
     }, true)
 
+    wrapper.setData({ header: '   ' })
     const saveBtn = wrapper.find('button.success')
     saveBtn.trigger('click')
 
     const emitObj = wrapper.emitted('lf:save')
     expect(emitObj).toBeUndefined()
+  })
+
+  it('emits trimmed string in header field', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    }, true)
+
+    const header = 'Todos for the day'
+
+    wrapper.setData({ header: `\n\t   ${header}   \n\t` })
+
+    const saveBtn = wrapper.find('button.success')
+    saveBtn.trigger('click')
+
+    const emitObj = wrapper.emitted('lf:save')[0][0]
+    expect(emitObj['header']).toEqual(header)
   })
 
   it('emits "lf:save" on clicking save button', () => {

@@ -7,11 +7,11 @@
         <v-text-field
           autofocus
           class='mr-2'
-          v-model.trim='header'
+          v-model='header'
           prepend-icon='title'
           box
           ref='headerField'
-          :rules='[v => v && !!v.length || "Required"]'
+          :rules='[NO_BLANK_RULE]'
           clear-icon='close'
           clearable
           label='Header'
@@ -65,6 +65,8 @@
 <script>
 import Swatches from 'vue-swatches'
 import 'vue-swatches/dist/vue-swatches.min.css'
+
+const NO_BLANK_RULE_GEN = msg => v => (typeof v === 'string' && !!v && !!v.trim().length) || msg
 const DEFAULT_LIST_TYPE = 'assignment'
 const DEFAULT_COLOR_HEX = '#f44336'
 const LIST_TYPE_PRESET = [
@@ -109,7 +111,9 @@ export default {
       LIST_TYPE_PRESET,
       type: DEFAULT_LIST_TYPE,
       highlightColor: DEFAULT_COLOR_HEX,
-      header: ''
+      header: '',
+      NO_BLANK_RULE: null,
+      ERROR_MSG: 'This field must be non-empty.'
     }
   },
   methods: {
@@ -117,7 +121,7 @@ export default {
       return {
         type: this.type,
         highlightColor: this.highlightColor,
-        header: this.header
+        header: this.header.trim()
       }
     },
     onDiscard (ev) {
@@ -125,7 +129,7 @@ export default {
       this.reset()
     },
     onSave (ev) {
-      if (this.header.length === 0) return
+      if (this.NO_BLANK_RULE(this.header) === this.ERROR_MSG) return
       this.$emit('lf:save', this.getData(), ev)
       this.reset()
     },
@@ -141,6 +145,9 @@ export default {
     for (let i = 0; i < swatches.length; ++i) {
       swatches[i].setAttribute('tabindex', 0)
     }
+  },
+  created () {
+    this.NO_BLANK_RULE = NO_BLANK_RULE_GEN(this.ERROR_MSG)
   }
 }
 </script>

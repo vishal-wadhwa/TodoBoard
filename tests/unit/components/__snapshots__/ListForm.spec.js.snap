@@ -26,7 +26,7 @@ exports[`ListForm.vue should match snapshot 1`] = `
       </div>
     </div>
     <div>
-      <div class="v-subheader theme--light">Choose a color for your list</div>
+      <div class="v-subheader theme--light">Choose a highlight color for your list</div>
       <div tabindex="-1" class="vue-swatches swatches">
         <!---->
         <div class="vue-swatches__container vue-swatches--inline" style="background-color: rgb(255, 255, 255);" name="vue-swatches-show-hide">

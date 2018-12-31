@@ -19,8 +19,14 @@
         ></v-text-field>
       </div>
       <div>
-        <v-subheader>Choose a color for your list</v-subheader>
-        <swatches v-model='color' inline colors='material-basic' class='swatches' tabindex='-1'/>
+        <v-subheader>Choose a highlight color for your list</v-subheader>
+        <swatches
+          v-model='highlightColor'
+          inline
+          colors='material-basic'
+          class='swatches'
+          tabindex='-1'
+        />
       </div>
       <div>
         <v-subheader>Choose a list type</v-subheader>
@@ -102,7 +108,7 @@ export default {
       DEFAULT_COLOR_HEX,
       LIST_TYPE_PRESET,
       type: DEFAULT_LIST_TYPE,
-      color: DEFAULT_COLOR_HEX,
+      highlightColor: DEFAULT_COLOR_HEX,
       header: ''
     }
   },
@@ -110,7 +116,7 @@ export default {
     getData () {
       return {
         type: this.type,
-        color: this.color,
+        highlightColor: this.highlightColor,
         header: this.header
       }
     },
@@ -125,7 +131,7 @@ export default {
     },
     reset () {
       this.type = this.DEFAULT_LIST_TYPE
-      this.color = this.DEFAULT_COLOR_HEX
+      this.highlightColor = this.DEFAULT_COLOR_HEX
       this.header = ''
     }
   },

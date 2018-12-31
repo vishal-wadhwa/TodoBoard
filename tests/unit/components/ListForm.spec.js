@@ -69,7 +69,7 @@ describe('ListForm.vue', () => {
 
     const data = {
       header: 'Todos for the day',
-      color: '#f44336',
+      highlightColor: '#f44336',
       type: 'add'
     }
 

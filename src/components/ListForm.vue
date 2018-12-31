@@ -67,6 +67,18 @@ import Swatches from 'vue-swatches'
 import 'vue-swatches/dist/vue-swatches.min.css'
 
 const NO_BLANK_RULE_GEN = msg => v => (typeof v === 'string' && !!v && !!v.trim().length) || msg
+
+const strNumToHex = snum => parseInt(snum).toString(16).padStart(2, '0')
+const rgbToHex = rgb => {
+  if (/^#[\dA-Z]{6}$/i.test(rgb)) return rgb
+
+  const shadeStr = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).map(strNumToHex).slice(1).join('')
+  return '#' + shadeStr
+}
+
+const ENTER_KEY_CODE = 13
+const SPACE_KEY_CODE = 32
+
 const DEFAULT_LIST_TYPE = 'assignment'
 const DEFAULT_COLOR_HEX = '#f44336'
 const LIST_TYPE_PRESET = [
@@ -113,7 +125,8 @@ export default {
       highlightColor: DEFAULT_COLOR_HEX,
       header: '',
       NO_BLANK_RULE: null,
-      ERROR_MSG: 'This field must be non-empty.'
+      ERROR_MSG: 'This field must be non-empty.',
+      onPressEnterOnSwatch: null
     }
   },
   methods: {
@@ -144,10 +157,23 @@ export default {
     const swatches = document.querySelectorAll('.vue-swatches__swatch')
     for (let i = 0; i < swatches.length; ++i) {
       swatches[i].setAttribute('tabindex', 0)
+      swatches[i].addEventListener('keydown', this.onPressEnterOnSwatch)
     }
   },
   created () {
     this.NO_BLANK_RULE = NO_BLANK_RULE_GEN(this.ERROR_MSG)
+    this.onPressEnterOnSwatch = evt => {
+      if (evt.keyCode === ENTER_KEY_CODE || evt.keyCode === SPACE_KEY_CODE) {
+        evt.preventDefault()
+        this.highlightColor = rgbToHex(evt.target.style.backgroundColor)
+      }
+    }
+  },
+  beforeDestroy () {
+    const swatches = document.querySelectorAll('.vue-swatches__swatch')
+    for (let i = 0; i < swatches.length; ++i) {
+      swatches[i].removeEventListener('keydown', this.onPressEnterOnSwatch)
+    }
   }
 }
 </script>

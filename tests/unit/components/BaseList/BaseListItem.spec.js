@@ -2,7 +2,6 @@ import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import BaseListItem from '@/components/BaseList/BaseListItem'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
-// import VChip from 'vuetify/lib/components/VChip'
 Vue.use(Vuetify)
 
 describe('BaseListItem.vue', () => {

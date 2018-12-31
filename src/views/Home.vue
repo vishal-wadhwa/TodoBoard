@@ -50,7 +50,66 @@ export default {
         return nit
       }),
       state: false,
-      bItems: []
+      bItems: [
+        {
+          _id: 'lst-1',
+          highlightColor: '#abcdef',
+          header: 'List1',
+          tags: ['haha', 'llssd'],
+          list: [
+            {
+              _id: 'lst-1:it-1',
+              title: 'sanmu',
+              desc: 'oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej',
+              tags: ['fa', 'jebpu'],
+              type: 'list'
+            },
+            {
+              title: 'iz',
+              desc: 'vuha ogpufub in jufwozi mira ep po gozseic burni zictam',
+              tags: ['sikgaok', 'co'],
+              _id: 'lst-1:it-2',
+              type: 'playlist_play'
+            }
+          ]
+        },
+        {
+          _id: 'lst-2',
+          highlightColor: '#12cdef',
+          header: 'List2',
+          tags: ['11haha', '22llssd'],
+          list: [
+            {
+              _id: 'lst-2:it-1',
+              title: 'sanmu',
+              desc: 'oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej',
+              tags: ['fa', 'jebpu'],
+              type: 'list'
+            },
+            {
+              title: 'iz',
+              desc: 'vuha ogpufub in jufwozi mira ep po gozseic burni zictam',
+              tags: ['sikgaok', 'co'],
+              _id: 'lst-2:it-2',
+              type: 'playlist_play'
+            }
+          ]
+        },
+        {
+          _id: 'lst-3',
+          highlightColor: '#a122ef',
+          header: 'List3',
+          tags: ['3haha', '33llssd'],
+          list: [
+            {
+              _id: 'lst-3:it-1',
+              title: 'duzjukve',
+              desc: 'giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun',
+              tags: ['magew', 'wobsudig']
+            }
+          ]
+        }
+      ]
     }
   },
   created () {

@@ -32,8 +32,11 @@ yarn run test:unit
 ```
 
 ### Pending changes:
-[] No empty tags. No empty fields anywhere also add unit tests for the same.
+[x] No empty tags. No empty fields anywhere also add unit tests for the same.
 [x] Board display should be horizontally not aligned.
-[] Color select on enter or space click.
+[x] Color select on enter or space click.
 [] Add classes to major components for styling like bordered lists.
 [] Rename project to TODO board.
+[] maybe change snapshot test from fullMount to shallow
+[] Fix focus
+[] add v-model unit tests

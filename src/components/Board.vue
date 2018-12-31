@@ -92,11 +92,10 @@ export default {
   computed: {
     slicedBoardItems () {
       let nlist = Array.from({ length: this.LIST_COLS }, () => [])
-      console.log(this.boardItems)
+
       for (let i = 0; i < this.boardItems.length; ++i) {
         nlist[i % this.LIST_COLS].push(this.boardItems[i])
       }
-      console.log(nlist)
 
       return nlist
     }

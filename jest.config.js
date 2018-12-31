@@ -13,7 +13,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '\\.(css|less|styl|sass|scss)$': 'identity-obj-proxy'
+    '^.+\\.(css)$': 'identity-obj-proxy'
   },
   snapshotSerializers: [
     'jest-serializer-vue'

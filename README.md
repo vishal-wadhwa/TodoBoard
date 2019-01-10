@@ -40,3 +40,6 @@ yarn run test:unit
 [] maybe change snapshot test from fullMount to shallow
 [] Fix focus
 [] add v-model unit tests
+[] small buttons:save,discard on breakpoint
+[] create new board form
+[] adjust padding for lists

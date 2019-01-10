@@ -79,19 +79,17 @@ export default {
       this.boardItems.find(bi => bi._id === itemId)._state = STATE_ITEM_ADD
     },
     onSaveItem (itemId, data, ev) {
-      let bItem = this.boardItems.find(bi => bi._id === itemId)
+      const bItem = this.boardItems.find(bi => bi._id === itemId)
       bItem._state = STATE_ITEM_NORMAL
-      const ob = {
-        ...data,
-        _id: 'li-' + (Math.random() * 144000 >> 0),
-        type: bItem['type']
-      }
-      bItem.list.push(ob)
+      this.$emit('b:new-list-item', {
+        listId: itemId,
+        listItem: data
+      }, ev)
     }
   },
   computed: {
     slicedBoardItems () {
-      let nlist = Array.from({ length: this.LIST_COLS }, () => [])
+      const nlist = Array.from({ length: this.LIST_COLS }, () => [])
 
       for (let i = 0; i < this.boardItems.length; ++i) {
         nlist[i % this.LIST_COLS].push(this.boardItems[i])

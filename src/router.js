@@ -10,6 +10,12 @@ export default new Router({
   routes: [
     {
       path: '/',
+      alias: '//:1',
+      name: 'init',
+      component: Home
+    },
+    {
+      path: '/:boardId',
       name: 'home',
       component: Home
     },

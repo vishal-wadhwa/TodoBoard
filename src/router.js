@@ -10,9 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      alias: '//:1',
-      name: 'init',
-      component: Home
+      redirect: { name: 'home', params: { boardId: '/:1' } },
+      name: 'init'
     },
     {
       path: '/:boardId',

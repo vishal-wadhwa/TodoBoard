@@ -1,16 +1,16 @@
 import actions from './actions.js'
+import router from '@/router.js'
 
 const ID_FIND_CMP = tfId => ob => ob._id === tfId
 
 export default {
   namespaced: true,
   state: {
-    activeBoardId: '/:1', // this is the same as route.params.id
     boards: [
       {
         _id: '/:1',
         lists: [],
-        boardName: 'Work'
+        boardName: 'My board'
       }
     ]
   },
@@ -18,13 +18,13 @@ export default {
     boardNames (state) {
       return state.boards.map(ob => ({ _id: ob._id, boardName: ob.boardName }))
     },
-    boardById (state) {
-      return state.boards.find(ID_FIND_CMP(state.activeBoardId))
+    boardById (state, getters, rootState) {
+      return state.boards.find(ID_FIND_CMP(rootState.route.params.boardId))
     }
   },
   mutations: {
     setActiveBoard (state, id) {
-      state.activeBoardId = id
+      router.push({ name: 'home', params: { boardId: id } })
     },
     createBoard (state, payload) {
       const _id = `/:${(new Date()).getTime()}`
@@ -35,11 +35,10 @@ export default {
         boardName: payload.boardName || 'New Board'
       })
 
-      state.activeBoardId = _id
+      router.push({ name: 'home', params: { boardId: _id } })
     },
     createList (state, payload) {
-      const board = state.boards.find(ID_FIND_CMP(state.activeBoardId))
-      console.log(board)
+      const board = state.boards.find(ID_FIND_CMP(router.currentRoute.params.boardId))
       if (!board) {
         // failed
         return
@@ -54,7 +53,7 @@ export default {
       })
     },
     createListItem (state, payload) {
-      const board = state.boards.find(ID_FIND_CMP(state.activeBoardId))
+      const board = state.boards.find(ID_FIND_CMP(router.currentRoute.params.boardId))
       if (!board) {
         // failed
         return

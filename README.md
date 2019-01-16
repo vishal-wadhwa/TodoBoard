@@ -41,5 +41,5 @@ yarn run test:unit
 [] Fix focus
 [] add v-model unit tests
 [] small buttons:save,discard on breakpoint
-[] create new board form
+[x] create new board form
 [] adjust padding for lists

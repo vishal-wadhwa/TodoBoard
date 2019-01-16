@@ -32,6 +32,20 @@
           <v-list-tile-title v-text='board.boardName'></v-list-tile-title>
         </v-list-tile>
       </v-list>
+      <v-text-field
+        ref='bnameFieldBox'
+        v-show='showNewFieldBox'
+        clearable
+        placeholder='My board'
+        class='ml-4 my-0 pa-0 body-1'
+        flat
+        v-model='newBoardName'
+        single-line
+        @keydown.enter='onBoardNameSave'
+        @keydown.esc='onBoardNameDiscard'
+        @click:append-outer='onBoardNameSave'
+        append-outer-icon='check_circle'
+      ></v-text-field>
     </v-layout>
   </v-navigation-drawer>
 </template>
@@ -49,6 +63,32 @@ export default {
     boardList: {
       type: Array,
       default: () => []
+    },
+    showNewFieldBox: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data () {
+    return {
+      newBoardName: ''
+    }
+  },
+  methods: {
+    onBoardNameSave (ev) {
+      this.$emit('end:bname-save', this.newBoardName.trim(), ev)
+      this.newBoardName = ''
+    },
+    onBoardNameDiscard (ev) {
+      this.$emit('end:bname-discard', ev)
+      this.newBoardName = ''
+    }
+  },
+  watch: {
+    showNewFieldBox (val) {
+      if (val) {
+        this.$nextTick(this.$refs.bnameFieldBox.focus)
+      }
     }
   }
 }

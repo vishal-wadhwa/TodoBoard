@@ -9,7 +9,14 @@
         <v-icon>{{ drawer ? 'close' : 'menu'}}</v-icon>
       </v-toolbar-side-icon>
     </title-bar>
-    <ext-nav-drawer v-model='drawer' :board-list='boardNames' @end:board-click='onBoardChange'></ext-nav-drawer>
+    <ext-nav-drawer
+      v-model='drawer'
+      :board-list='boardNames'
+      @end:board-click='onBoardChange'
+      :show-new-field-box='boardForm'
+      @end:bname-discard='boardForm = false'
+      @end:bname-save='onBoardCreate'
+    ></ext-nav-drawer>
     <v-content>
       <v-dialog max-width='800px' lazy v-model='listForm'>
         <list-form @lf:save='onListCreate' @lf:discard='listForm = false'></list-form>

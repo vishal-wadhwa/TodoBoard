@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleBar.vue should match snapshot when trigger button is clicked 1`] = `
+<nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <div class="v-toolbar__content" style="height: 64px;">
+    <div class="v-toolbar__title headline text-uppercase"><span>TITLE NAME</span></div>
+    <div class="spacer"></div>
+    <div class="v-speed-dial v-speed-dial--direction-bottom"><button type="button" class="v-btn v-btn--active v-btn--flat v-btn--floating v-btn--small theme--light">
+        <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">more_vert</i> <i aria-hidden="true" class="v-icon material-icons theme--light">close</i></div>
+      </button><span class="v-speed-dial__list"> <span class="v-tooltip v-tooltip--left"><span><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark green"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">add</i></div></button></span></span> <span class="v-tooltip v-tooltip--left"><span><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark indigo"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">add</i></div></button></span></span></span></div>
+  </div>
+</nav>
+`;
+
+exports[`TitleBar.vue should match snapshot when trigger button not clicked 1`] = `
+<nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <div class="v-toolbar__content" style="height: 64px;">
+    <div class="v-toolbar__title headline text-uppercase"><span>TITLE NAME</span></div>
+    <div class="spacer"></div>
+    <div class="v-speed-dial v-speed-dial--direction-bottom"><button type="button" class="v-btn v-btn--flat v-btn--floating v-btn--small theme--light">
+        <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">more_vert</i> <i aria-hidden="true" class="v-icon material-icons theme--light">close</i></div>
+      </button><span class="v-speed-dial__list"></span></div>
+  </div>
+</nav>
+`;

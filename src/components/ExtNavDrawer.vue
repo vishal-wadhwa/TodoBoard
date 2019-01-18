@@ -14,7 +14,7 @@
           <img src='https://picsum.photos/300/?random' class='img-avatar--border'>
         </v-avatar>
       </v-flex>
-      <v-list :subheader='true' dense>
+      <v-list subheader dense>
         <v-list-tile>
           <v-subheader class='mt-3'>Boards</v-subheader>
         </v-list-tile>
@@ -23,7 +23,7 @@
           avatar
           v-for='board in boardList'
           :key='board._id'
-          :to='{name: "home", params: {"boardId": board._id}}'
+          :to='{name: "home", params: {boardId: board._id}}'
           @click='ev => $emit("end:board-click", board, ev)'
         >
           <v-list-tile-avatar>

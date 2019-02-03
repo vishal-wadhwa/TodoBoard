@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLogo.vue should match snapshot with default props 1`] = `<span style="border-radius: 15px; padding: 1px; border-bottom: 3px double; font-size: 14px; color: white;"><strong>TODO</strong> <em class="font-weight-thin">Board</em></span>`;
+
+exports[`AppLogo.vue should match snapshot with integer size and hex color 1`] = `<span style="border-radius: 15px; padding: 1px; border-bottom: 3px double; font-size: 30px; color: rgb(171, 205, 239);"><strong>TODO</strong> <em class="font-weight-thin">Board</em></span>`;
+
+exports[`AppLogo.vue should match snapshot with string size and named color 1`] = `<span style="border-radius: 15px; padding: 1px; border-bottom: 3px double; font-size: 30rem; color: green;"><strong>TODO</strong> <em class="font-weight-thin">Board</em></span>`;

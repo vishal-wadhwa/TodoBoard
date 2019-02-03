@@ -10,7 +10,7 @@
       <v-layout row fill-height class='login-view__content'>
         <app-logo class='logo' color='black' size='1.5rem'></app-logo>
         <v-flex class='login-fields-container' md4 xs12>
-          <v-form class='mx-4' style='width: 100%;'>
+          <v-form class='mx-4' style='width: 100%;' ref='form'>
             <v-text-field
               v-model.trim='fullname'
               color='black'
@@ -18,8 +18,8 @@
               type='text'
               :rules='rules.fullname'
               validate-on-blur
-              autofocus
-              v-if='curState === STATE_SIGN_UP'
+              ref='fullNameField'
+              v-show='curState === STATE_SIGN_UP'
             ></v-text-field>
             <v-text-field
               v-model.trim='email'
@@ -28,7 +28,7 @@
               type='email'
               :rules='rules.email'
               validate-on-blur
-              :autofocus='curState === STATE_SIGN_IN'
+              ref='emailField'
             ></v-text-field>
             <v-text-field
               v-model='password'
@@ -52,7 +52,12 @@
                   'Login?'
                   }}
                 </span>
-                <v-btn dark round class='ma-0'>{{curState === STATE_SIGN_IN ? 'LogIn' : 'SignUp'}}</v-btn>
+                <v-btn
+                  dark
+                  round
+                  class='ma-0'
+                  @click='onSubmit'
+                >{{curState === STATE_SIGN_IN ? 'LogIn' : 'SignUp'}}</v-btn>
               </div>
             </v-layout>
           </v-form>
@@ -93,9 +98,13 @@ export default {
   methods: {
     toggleState () {
       this.curState = this.curState === this.STATE_SIGN_UP ? this.STATE_SIGN_IN : this.STATE_SIGN_UP
+      this.$refs.form.reset()
+      if (this.curState === this.STATE_SIGN_UP) this.$nextTick(this.$refs.fullNameField.focus)
+      else this.$nextTick(this.$refs.emailField.focus)
     }
   },
-  created () {
+  mounted () {
+    this.$refs.emailField.focus()
     // todo:
     // loading
   }

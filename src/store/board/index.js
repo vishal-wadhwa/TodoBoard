@@ -8,7 +8,7 @@ export default {
   state: {
     boards: [
       {
-        _id: '/:1',
+        _id: '1',
         lists: [],
         boardName: 'My board'
       }
@@ -27,7 +27,7 @@ export default {
       router.push({ name: 'home', params: { boardId: id } })
     },
     createBoard (state, payload) {
-      const _id = `/:${(new Date()).getTime()}`
+      const _id = `${(new Date()).getTime()}`
 
       state.boards.push({
         _id,
@@ -48,7 +48,7 @@ export default {
         tags: payload.tags || [],
         header: payload.header || '',
         highlightColor: payload.highlightColor || '#000000',
-        _id: `/${board.boardName}:${(new Date()).getTime()}`,
+        _id: `${board.boardName}:${(new Date()).getTime()}`,
         list: []
       })
     },
@@ -61,7 +61,7 @@ export default {
 
       const list = board.lists.find(ID_FIND_CMP(payload.listId))
       list.list.push({
-        _id: `/${board.boardName}/${list.header}:${(new Date()).getTime()}`,
+        _id: `${board.boardName}:${list.header}:${(new Date()).getTime()}`,
         title: payload.listItem.title || '',
         desc: payload.listItem.desc || '',
         tags: payload.listItem.tags || [],

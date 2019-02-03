@@ -1,22 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Login from './views/Login'
+import store from './store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      redirect: { name: 'home', params: { boardId: '/:1' } },
-      name: 'init'
+      name: 'login',
+      component: Login
     },
     {
       path: '/:boardId',
       name: 'home',
-      component: Home
+      component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
+      beforeEnter: (to, from, next) => {
+        if (!store.state.board.boards.some(v => v._id === to.params.boardId)) {
+          next({
+            name: 'home',
+            params: { boardId: store.state.board.boards[0]._id }
+          })
+        } else next()
+      }
     },
     {
       path: '/about',
@@ -28,3 +37,5 @@ export default new Router({
     }
   ]
 })
+
+export default router

@@ -19,7 +19,7 @@
               :rules='rules.fullname'
               validate-on-blur
               ref='fullNameField'
-              v-show='curState === STATE_SIGN_UP'
+              v-if='curState === STATE_SIGN_UP'
             ></v-text-field>
             <v-text-field
               v-model.trim='email'
@@ -57,6 +57,7 @@
                   round
                   class='ma-0'
                   @click='onSubmit'
+                  :loading='authenticating'
                 >{{curState === STATE_SIGN_IN ? 'LogIn' : 'SignUp'}}</v-btn>
               </div>
             </v-layout>
@@ -74,6 +75,7 @@
 <script>
 // https://dribbble.com/shots/3586598-Bank-login-panel
 import AppLogo from '../components/AppLogo'
+import { mapActions } from 'vuex'
 const STATE_SIGN_UP = 'SIGN_UP'
 const STATE_SIGN_IN = 'SIGN_IN'
 
@@ -92,7 +94,8 @@ export default {
         email: [val => /\S+@\S+\.\S+/.test(val.trim().toLowerCase()) || 'Please enter a valid email ID'],
         password: [val => val.length >= 8 || 'Password must have a minimum of 8 letters'],
         fullname: [val => !!val.trim().length || 'Please enter your full name']
-      }
+      },
+      authenticating: false
     }
   },
   methods: {
@@ -101,12 +104,29 @@ export default {
       this.$refs.form.reset()
       if (this.curState === this.STATE_SIGN_UP) this.$nextTick(this.$refs.fullNameField.focus)
       else this.$nextTick(this.$refs.emailField.focus)
-    }
+    },
+    async onSubmit (ev) {
+      if (!this.$refs.form.validate()) return
+      this.authenticating = true
+
+      if (this.curState === this.STATE_SIGN_UP) {
+        await this.signUp({
+          email: this.email,
+          password: this.password,
+          fullname: this.fullname
+        })
+      } else {
+        await this.login({
+          email: this.email,
+          password: this.password
+        })
+      }
+      this.authenticating = false
+    },
+    ...mapActions('login', ['login', 'signUp'])
   },
   mounted () {
     this.$refs.emailField.focus()
-    // todo:
-    // loading
   }
 }
 </script>

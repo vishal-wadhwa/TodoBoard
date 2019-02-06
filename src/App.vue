@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <title-bar
+      v-if='$route.fullPath !== "/"'
       title='Todo board'
       @tb:create-list='listForm = true'
       @tb:create-board='boardForm = true'
@@ -10,6 +11,7 @@
       </v-toolbar-side-icon>
     </title-bar>
     <ext-nav-drawer
+      v-if='$route.fullPath !== "/"'
       v-model='drawer'
       :board-list='boardNames'
       @end:board-click='onBoardChange'

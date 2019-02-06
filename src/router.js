@@ -30,4 +30,16 @@ const router = new Router({
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.fullPath !== '/' && !store.getters['login/isLoggedIn']) next('/')
+  else if (to.fullPath === '/' && store.getters['login/isLoggedIn']) {
+    next({
+      name: 'home',
+      params: {
+        boardId: store.state.board.boards[0]._id
+      }
+    })
+  } else next()
+})
+
 export default router

@@ -1,4 +1,4 @@
-# cardboard
+# TodoBoard
 Inspiration: [this](https://dribbble.com/shots/5421211-Progress-Board-Interface-for-Education-Platform/attachments)
 
 ## Project setup
@@ -36,10 +36,13 @@ yarn run test:unit
 [x] Board display should be horizontally not aligned.
 [x] Color select on enter or space click.
 [] Add classes to major components for styling like bordered lists.
-[] Rename project to TODO board.
-[] maybe change snapshot test from fullMount to shallow
-[] Fix focus
+[x] Rename project to TODO board.
+[] Fix focus in v-model
 [] add v-model unit tests
 [] small buttons:save,discard on breakpoint
 [x] create new board form
 [] adjust padding for lists
+[] notifications
+[] logout button
+[] image upload
+[] progress bar

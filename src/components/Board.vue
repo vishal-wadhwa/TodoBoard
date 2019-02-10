@@ -24,7 +24,7 @@
                 <v-btn
                   fab
                   dark
-                  :color='boardItem.highlightColor'
+                  :color='boardItem.highlightColor || "black"'
                   small
                   @click='ev => onAddClick(boardItem._id, ev)'
                 >
@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     onAddClick (itemId, ev) {
-      console.log(itemId)
       this.boardItems.find(bi => bi._id === itemId)._state = STATE_ITEM_ADD
     },
     onSaveItem (itemId, data, ev) {

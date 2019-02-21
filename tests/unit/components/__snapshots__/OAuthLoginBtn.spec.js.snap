@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OAuthLoginBtn.vue should match default snapshot 1`] = `
+<span class="v-chip chip-wrapper ma-0" style="background: rgba(0, 0, 0, 0.05); color: black;"><!---->
+  &nbsp;&nbsp;
+</span>
+`;
+
+exports[`OAuthLoginBtn.vue should match snapshot with props 1`] = `
+<span title="Google" class="v-chip chip-wrapper ma-0" style="background: green; color: blue; border: 1px solid red;"><div class="v-avatar ma-0 pa-1" style="height: 32px; width: 32px; background: red;"><img src="some_image.jpg" alt="login"></div>
+  &nbsp;Google&nbsp;
+</span>
+`;

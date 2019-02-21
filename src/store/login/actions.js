@@ -12,17 +12,12 @@ const dummyActions = {
 
 const localActions = {
   async login ({ commit }, payload) {
-    const data = {
-      fullname: payload.fullname || 'New user',
-      email: payload.email || 'new_user@example.com'
-    }
-    storage.writeObject('user', data)
-    commit('login', data)
+    commit('login', { err: 'Invalid credentials!' })
   },
   async signUp ({ commit }, payload) {
     const data = {
-      fullname: payload.fullname || 'New user',
-      email: payload.email || 'new_user@example.com'
+      fullname: payload.fullname,
+      email: payload.email
     }
     storage.writeObject('user', data)
     commit('signUp', data)

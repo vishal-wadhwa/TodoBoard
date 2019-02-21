@@ -9,13 +9,14 @@ export default {
   },
   getters: {
     isLoggedIn (state) {
-      return !!state.user && !!state.user.fullname && !!state.user.email
+      return !!state.user && !!state.user.fullname && !!state.user.email && process.env.NODE_ENV !== 'production'
     }
   },
   mutations: {
     login (state, payload) {
       if (payload.err) {
         // error notif
+        console.log(payload.err)
         return
       }
 
@@ -28,6 +29,7 @@ export default {
     signUp (state, payload) {
       if (payload.err) {
         // error notif
+        console.log(payload.err)
         return
       }
 

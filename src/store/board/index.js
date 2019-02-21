@@ -1,72 +1,68 @@
 import actions from './actions.js'
 import router from '@/router.js'
+import storage from '@/utils/storage_utils.js'
 
 const ID_FIND_CMP = tfId => ob => ob._id === tfId
+const DEFAULT_BOARD = {
+  _id: '1',
+  boardName: 'My board'
+}
+const boardsInit = () => {
+  const boardList = storage.readObject('BOARDS', [])
+  if (boardList.length === 0) {
+    boardList.push(DEFAULT_BOARD)
+    storage.writeObject('BOARDS', boardList)
+  }
+  return boardList.map(ob => ({ ...ob, lists: [] }))
+}
 
 export default {
   namespaced: true,
   state: {
-    boards: [
-      {
-        _id: '1',
-        lists: [],
-        boardName: 'My board'
-      }
-    ]
+    boards: boardsInit()
   },
   getters: {
     boardNames (state) {
       return state.boards.map(ob => ({ _id: ob._id, boardName: ob.boardName }))
     },
-    boardById (state, getters, rootState) {
-      return state.boards.find(ID_FIND_CMP(rootState.route.params.boardId))
+    boardById (state, getters) {
+      return state.boards.find(ID_FIND_CMP(getters.activeBoardId))
+    },
+    activeBoardId (state, getters, rootState) {
+      return rootState.route.params.boardId
     }
   },
   mutations: {
-    setActiveBoard (state, id) {
-      router.push({ name: 'home', params: { boardId: id } })
+    setActiveBoard (state, { boardId, data }) {
+      state.boards.find(ID_FIND_CMP(boardId)).lists = data
+      router.push({ name: 'home', params: { boardId } })
     },
     createBoard (state, payload) {
-      const _id = `${(new Date()).getTime()}`
-
       state.boards.push({
-        _id,
-        lists: [],
-        boardName: payload.boardName || 'New Board'
+        ...payload,
+        lists: []
       })
 
-      router.push({ name: 'home', params: { boardId: _id } })
+      router.push({ name: 'home', params: { boardId: payload._id } })
     },
     createList (state, payload) {
-      const board = state.boards.find(ID_FIND_CMP(router.currentRoute.params.boardId))
-      if (!board) {
-        // failed
-        return
-      }
+      const data = { ...payload }
+      delete data.boardId
 
+      const board = state.boards.find(ID_FIND_CMP(payload.boardId))
       board.lists.push({
-        tags: payload.tags || [],
-        header: payload.header || '',
-        highlightColor: payload.highlightColor || '#000000',
-        _id: `${board.boardName}:${(new Date()).getTime()}`,
+        ...data,
         list: []
       })
     },
     createListItem (state, payload) {
-      const board = state.boards.find(ID_FIND_CMP(router.currentRoute.params.boardId))
-      if (!board) {
-        // failed
-        return
-      }
+      const data = { ...payload }
+      delete data.listId
+      delete data.boardId
 
+      const board = state.boards.find(ID_FIND_CMP(payload.boardId))
       const list = board.lists.find(ID_FIND_CMP(payload.listId))
-      list.list.push({
-        _id: `${board.boardName}:${list.header}:${(new Date()).getTime()}`,
-        title: payload.listItem.title || '',
-        desc: payload.listItem.desc || '',
-        tags: payload.listItem.tags || [],
-        type: payload.listItem.type || 'assignment'
-      })
+      list.list.push({ ...data, type: list.type })
     }
   },
   actions

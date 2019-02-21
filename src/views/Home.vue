@@ -24,6 +24,9 @@ export default {
     boardLists () {
       return this.$store.getters['board/boardById'].lists
     }
+  },
+  async created () {
+    await this.$store.dispatch('board/loadBoard', this.$store.getters['board/activeBoardId'])
   }
 }
 </script>

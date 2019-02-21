@@ -19,10 +19,10 @@ export default {
   },
   computed: {
     boardName () {
-      return this.$store.getters['board/boardById'].boardName
+      return this.$store.getters['board/activeBoard'].boardName
     },
     boardLists () {
-      return this.$store.getters['board/boardById'].lists
+      return this.$store.getters['board/activeBoard'].lists
     }
   },
   async created () {

@@ -25,7 +25,7 @@ export default {
     boardNames (state) {
       return state.boards.map(ob => ({ _id: ob._id, boardName: ob.boardName }))
     },
-    boardById (state, getters) {
+    activeBoard (state, getters) {
       return state.boards.find(ID_FIND_CMP(getters.activeBoardId))
     },
     activeBoardId (state, getters, rootState) {

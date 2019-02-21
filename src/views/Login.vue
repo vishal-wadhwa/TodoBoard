@@ -99,7 +99,7 @@ export default {
     return {
       STATE_SIGN_UP: STATE_SIGN_UP,
       STATE_SIGN_IN: STATE_SIGN_IN,
-      curState: STATE_SIGN_IN,
+      curState: STATE_SIGN_UP,
       email: '',
       password: '',
       fullname: '',

@@ -9,6 +9,9 @@
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
         <v-icon>{{ drawer ? 'close' : 'menu'}}</v-icon>
       </v-toolbar-side-icon>
+      <v-toolbar-title slot='toolbar-heading'>
+        <app-logo color='black' size='2rem'></app-logo>
+      </v-toolbar-title>
     </title-bar>
     <ext-nav-drawer
       v-if='$route.fullPath !== "/"'
@@ -32,12 +35,13 @@
 import ExtNavDrawer from '@/components/ExtNavDrawer'
 import TitleBar from '@/components/TitleBar'
 import ListForm from '@/components/ListForm'
+import AppLogo from '@/components/AppLogo'
 
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
-  components: { ExtNavDrawer, TitleBar, ListForm },
+  components: { ExtNavDrawer, TitleBar, ListForm, AppLogo },
   data () {
     return {}
   },

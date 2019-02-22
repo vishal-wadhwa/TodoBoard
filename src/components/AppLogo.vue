@@ -1,5 +1,5 @@
 <template>
-  <span :style='styling' style='border-radius:15px; padding: 1px; border-bottom: 3px double;'>
+  <span :style='styling' style='border-radius:15px; padding: 2px; border-bottom: 3px double;'>
     <strong>{{mini ? 'T' : 'TODO'}}</strong>
     <em class='font-weight-thin'>Board</em>
   </span>

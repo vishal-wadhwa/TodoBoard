@@ -41,10 +41,12 @@
         flat
         v-model='newBoardName'
         single-line
+        append-outer-icon='check_circle'
         @keydown.enter='onBoardNameSave'
         @keydown.esc='onBoardNameDiscard'
         @click:append-outer='onBoardNameSave'
-        append-outer-icon='check_circle'
+        @blur='onBoardNameDiscard'
+        :error-messages='errMsg'
       ></v-text-field>
     </v-layout>
   </v-navigation-drawer>
@@ -71,17 +73,24 @@ export default {
   },
   data () {
     return {
-      newBoardName: ''
+      newBoardName: '',
+      ERROR_MSG: 'Board name can\'t be empty',
+      errMsg: ''
     }
   },
   methods: {
     onBoardNameSave (ev) {
+      if (this.newBoardName.trim().length === 0) {
+        this.errMsg = this.ERROR_MSG
+        return
+      }
       this.$emit('end:bname-save', this.newBoardName.trim(), ev)
       this.newBoardName = ''
     },
     onBoardNameDiscard (ev) {
       this.$emit('end:bname-discard', ev)
       this.newBoardName = ''
+      this.errMsg = ''
     }
   },
   watch: {

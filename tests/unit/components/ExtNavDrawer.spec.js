@@ -178,6 +178,24 @@ describe('ExtNavDrawer.vue', () => {
     }, 0)
   })
 
+  it('does not emit "end:bname-save" and goes into error state when boardName is empty', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    }, true)
+
+    const textField = wrapper.find({ name: 'v-text-field' })
+    textField.trigger('keydown', { key: 'Enter' })
+
+    expect(wrapper.vm.$data.errMsg).toBe('')
+
+    setTimeout(() => {
+      const emitArr = wrapper.emitted('end:bname-save')
+      expect(emitArr.length).toBe(0)
+      expect(wrapper.vm.$data.errMsg).toBe(wrapper.props('ERROR_MSG'))
+    }, 0)
+  })
+
   it('should match snapshot when text field is not visible', () => {
     const wrapper = factory({
       localVue,

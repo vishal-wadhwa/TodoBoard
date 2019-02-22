@@ -6,7 +6,7 @@ exports[`Board.vue should match snapshot 1`] = `
   <div class="layout wrap">
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
-        <div class="container fluid">
+        <div class="container fluid pa-2">
           <div class="headline mb-3 font-weight-light">
             List1
             <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(171, 205, 239); border-color: #abcdef;">2</div>
@@ -103,7 +103,7 @@ exports[`Board.vue should match snapshot 1`] = `
     </div>
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
-        <div class="container fluid">
+        <div class="container fluid pa-2">
           <div class="headline mb-3 font-weight-light">
             List2
             <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(18, 205, 239); border-color: #12cdef;">2</div>
@@ -200,7 +200,7 @@ exports[`Board.vue should match snapshot 1`] = `
     </div>
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
-        <div class="container fluid">
+        <div class="container fluid pa-2">
           <div class="headline mb-3 font-weight-light">
             List3
             <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(161, 34, 239); border-color: #a122ef;">1</div>

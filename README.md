@@ -39,7 +39,7 @@ yarn run test:unit
 [x] Fix focus all forms
 [x] create new board form
 [x] small buttons:save,discard on breakpoint
-[] adjust padding for lists
+[x] adjust padding for lists
 [] notifications
 [] logout button at place of 3 dots
 [] image upload

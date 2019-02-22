@@ -1,6 +1,11 @@
 <template>
   <v-container fluid>
-    <board :lists='boardLists' :board-name='boardName' @b:new-list-item='onListItemCreate'></board>
+    <board
+      :lists='boardLists'
+      :board-name='boardName'
+      @b:new-list-item='onListItemCreate'
+      class='pa-0'
+    ></board>
   </v-container>
 </template>
 

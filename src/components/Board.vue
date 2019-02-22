@@ -13,6 +13,7 @@
       >
         <v-layout column>
           <base-list
+            class='pa-2'
             v-for='boardItem in slicedBoardItem'
             :key='boardItem._id'
             :highlightColor='boardItem.highlightColor'

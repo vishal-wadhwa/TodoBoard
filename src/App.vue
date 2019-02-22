@@ -4,7 +4,7 @@
       v-if='$route.fullPath !== "/"'
       title='Todo board'
       @tb:create-list='listForm = true; $refs["listForm"] && $nextTick($refs["listForm"].focus)'
-      @tb:create-board='boardForm = true'
+      @tb:create-board='boardForm = drawer = true'
     >
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
         <v-icon>{{ drawer ? 'close' : 'menu'}}</v-icon>

@@ -47,4 +47,4 @@ yarn run test:unit
 [] move add buttons to home
 [x] title bar logo replace
 [] new board auto open sidebar
-[] change tab icon in index.html
+[x] change tab icon in index.html

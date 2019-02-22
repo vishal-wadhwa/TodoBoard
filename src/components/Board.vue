@@ -37,6 +37,7 @@
                   :tags='boardItem.tags || []'
                   @lif:save='(data, ev) => onSaveItem(boardItem._id, data, ev)'
                   @lif:discard='boardItem._state = STATE_ITEM_NORMAL'
+                  :ref='"listItemForm"+boardItem._id'
                 ></list-item-form>
               </v-slide-y-transition>
             </template>
@@ -76,6 +77,7 @@ export default {
   methods: {
     onAddClick (itemId, ev) {
       this.boardItems.find(bi => bi._id === itemId)._state = STATE_ITEM_ADD
+      this.$nextTick(this.$refs['listItemForm' + itemId][0].focus)
     },
     onSaveItem (itemId, data, ev) {
       const bItem = this.boardItems.find(bi => bi._id === itemId)

@@ -139,9 +139,6 @@ export default {
       this.authenticating = false
     },
     ...mapActions('login', ['login', 'signUp'])
-  },
-  mounted () {
-    this.$refs.emailField.focus()
   }
 }
 </script>

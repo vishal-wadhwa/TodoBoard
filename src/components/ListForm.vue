@@ -51,7 +51,7 @@
     <v-card-actions class='pt-0 pb-3'>
       <slot name='actions'>
         <v-layout justify-end>
-          <v-btn round @click='onDiscard' color='error'>
+          <v-btn round @click='onDiscard' color='error' :small='$vuetify.breakpoint.xs'>
             <v-icon>clear</v-icon>&nbsp;Discard
           </v-btn>
           <v-btn round @click='onSave' color='success'>
@@ -150,10 +150,12 @@ export default {
       this.type = this.DEFAULT_LIST_TYPE
       this.highlightColor = this.DEFAULT_COLOR_HEX
       this.header = ''
+    },
+    focus () {
+      this.$refs['headerField'].focus()
     }
   },
   mounted () {
-    this.$refs['headerField'].focus()
     const swatches = document.querySelectorAll('.vue-swatches__swatch')
     for (let i = 0; i < swatches.length; ++i) {
       swatches[i].setAttribute('tabindex', 0)

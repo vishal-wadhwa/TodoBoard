@@ -15,6 +15,7 @@
             clear-icon='close'
             clearable
             label='Title'
+            ref='titleField'
           ></v-text-field>
           <v-textarea box v-model='desc' prepend-icon='description' rows='3'>
             <div slot='label'>
@@ -105,6 +106,9 @@ export default {
         tags: this.tagSelect.map(v => v.trim()),
         desc: (this.desc || '').trim()
       }
+    },
+    focus () {
+      this.$refs['titleField'].focus()
     }
   },
   created () {

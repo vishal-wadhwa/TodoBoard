@@ -3,7 +3,7 @@
     <title-bar
       v-if='$route.fullPath !== "/"'
       title='Todo board'
-      @tb:create-list='listForm = true'
+      @tb:create-list='listForm = true; $refs["listForm"] && $nextTick($refs["listForm"].focus)'
       @tb:create-board='boardForm = true'
     >
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
@@ -21,7 +21,7 @@
     ></ext-nav-drawer>
     <v-content>
       <v-dialog max-width='800px' lazy v-model='listForm'>
-        <list-form @lf:save='onListCreate' @lf:discard='listForm = false'></list-form>
+        <list-form @lf:save='onListCreate' @lf:discard='listForm = false' ref='listForm'></list-form>
       </v-dialog>
       <router-view/>
     </v-content>

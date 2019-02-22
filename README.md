@@ -35,14 +35,16 @@ yarn run test:unit
 [x] No empty tags. No empty fields anywhere also add unit tests for the same.
 [x] Board display should be horizontally not aligned.
 [x] Color select on enter or space click.
-[] Add classes to major components for styling like bordered lists.
 [x] Rename project to TODO board.
-[] Fix focus in v-model
-[] add v-model unit tests
-[] small buttons:save,discard on breakpoint
+[x] Fix focus all forms
 [x] create new board form
+[] small buttons:save,discard on breakpoint
 [] adjust padding for lists
 [] notifications
-[] logout button
+[] logout button at place of 3 dots
 [] image upload
 [] progress bar
+[] move add buttons to home
+[] title bar logo replace
+[] new board auto open sidebar
+[] change tab icon in index.html

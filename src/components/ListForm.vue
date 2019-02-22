@@ -54,7 +54,7 @@
           <v-btn round @click='onDiscard' color='error' :small='$vuetify.breakpoint.xs'>
             <v-icon>clear</v-icon>&nbsp;Discard
           </v-btn>
-          <v-btn round @click='onSave' color='success'>
+          <v-btn round @click='onSave' color='success' :small='$vuetify.breakpoint.xs'>
             <v-icon>check_circle_outline</v-icon>&nbsp;Save
           </v-btn>
         </v-layout>

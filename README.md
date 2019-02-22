@@ -38,7 +38,7 @@ yarn run test:unit
 [x] Rename project to TODO board.
 [x] Fix focus all forms
 [x] create new board form
-[] small buttons:save,discard on breakpoint
+[x] small buttons:save,discard on breakpoint
 [] adjust padding for lists
 [] notifications
 [] logout button at place of 3 dots

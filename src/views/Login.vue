@@ -65,6 +65,7 @@
                   class='ma-0'
                   @click='onSubmit'
                   :loading='authenticating'
+                  :small='$vuetify.breakpoint.xs'
                 >{{curState === STATE_SIGN_IN ? 'LogIn' : 'SignUp'}}</v-btn>
                 <span
                   @click='toggleState'

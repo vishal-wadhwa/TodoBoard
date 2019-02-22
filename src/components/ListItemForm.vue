@@ -48,10 +48,10 @@
     <v-card-actions class='pt-0 pb-3'>
       <slot name='actions'>
         <v-layout justify-end>
-          <v-btn round @click='onDiscard' color='error'>
+          <v-btn round @click='onDiscard' color='error' :small='$vuetify.breakpoint.xs'>
             <v-icon>clear</v-icon>&nbsp;Discard
           </v-btn>
-          <v-btn round @click='onSave' color='success'>
+          <v-btn round @click='onSave' color='success' :small='$vuetify.breakpoint.xs'>
             <v-icon>check_circle_outline</v-icon>&nbsp;Save
           </v-btn>
         </v-layout>

@@ -38,6 +38,10 @@ export default {
         email: payload.email
       }
       router.push({ name: 'home', params: { boardId: '1' } })
+    },
+    logout (state) {
+      state.user = null
+      router.push({ name: 'login' })
     }
   },
   actions

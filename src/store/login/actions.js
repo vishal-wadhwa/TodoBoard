@@ -7,6 +7,9 @@ const dummyActions = {
   },
   async signUp ({ commit }, payload) {
     commit('signUp', payload)
+  },
+  async logout ({ commit }) {
+    commit('logout')
   }
 }
 
@@ -21,6 +24,10 @@ const localActions = {
     }
     storage.writeObject('user', data)
     commit('signUp', data)
+  },
+  async logout ({ commit }) {
+    storage.clear('user')
+    commit('logout')
   }
 }
 

@@ -1,6 +1,10 @@
 <template>
   <v-app>
-    <title-bar v-if='$route.fullPath !== "/"' title='Todo board' @tb:sign-out>
+    <title-bar
+      v-if='$route.fullPath !== "/"'
+      title='Todo board'
+      @tb:log-out='$store.dispatch("login/logout")'
+    >
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
         <v-icon>{{ drawer ? 'close' : 'menu'}}</v-icon>
       </v-toolbar-side-icon>

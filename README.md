@@ -49,5 +49,5 @@ yarn run test:unit
 [x] new board auto open sidebar
 [x] change tab icon in index.html
 [] add better resolution favicon.ico
-[] clear info on logout
+[x] clear info on logout
 [] delete button on board, list, list item

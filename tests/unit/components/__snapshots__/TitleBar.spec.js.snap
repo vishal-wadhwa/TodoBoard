@@ -4,7 +4,9 @@ exports[`TitleBar.vue should match snapshot 1`] = `
 <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
   <div class="v-toolbar__content" style="height: 64px;">
     <div class="v-toolbar__title headline text-uppercase"><span>TITLE NAME</span></div>
-    <div class="spacer"></div>
+    <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--floating v-btn--small theme--light" title="Log Out">
+      <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">power_settings_new</i></div>
+    </button>
   </div>
 </nav>
 `;

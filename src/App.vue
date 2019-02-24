@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <title-bar v-if='$route.fullPath !== "/"' title='Todo board'>
+    <title-bar v-if='$route.fullPath !== "/"' title='Todo board' @tb:sign-out>
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
         <v-icon>{{ drawer ? 'close' : 'menu'}}</v-icon>
       </v-toolbar-side-icon>

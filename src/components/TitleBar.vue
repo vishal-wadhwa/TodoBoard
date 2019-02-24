@@ -7,7 +7,11 @@
       </v-toolbar-title>
     </slot>
     <v-spacer/>
-    <slot name='toolbar-content-right'></slot>
+    <slot name='toolbar-content-right'>
+      <v-btn fab small flat title='Log Out' @click='ev => $emit("tb:log-out", ev)'>
+        <v-icon>power_settings_new</v-icon>
+      </v-btn>
+    </slot>
   </v-toolbar>
 </template>
 <script>

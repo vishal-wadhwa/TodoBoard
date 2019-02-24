@@ -41,7 +41,7 @@ yarn run test:unit
 [x] small buttons:save,discard on breakpoint
 [x] adjust padding for lists
 [] notifications
-[] logout button at place of 3 dots
+[x] logout button at place of 3 dots
 [] image upload
 [] progress bar
 [x] move add buttons to home
@@ -50,3 +50,4 @@ yarn run test:unit
 [x] change tab icon in index.html
 [] add better resolution favicon.ico
 [] clear info on logout
+[] delete button on board, list, list item

@@ -44,7 +44,9 @@ yarn run test:unit
 [] logout button at place of 3 dots
 [] image upload
 [] progress bar
-[] move add buttons to home
+[x] move add buttons to home
 [x] title bar logo replace
 [x] new board auto open sidebar
 [x] change tab icon in index.html
+[] add better resolution favicon.ico
+[] clear info on logout

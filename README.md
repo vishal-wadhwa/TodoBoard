@@ -48,6 +48,6 @@ yarn run test:unit
 [x] title bar logo replace
 [x] new board auto open sidebar
 [x] change tab icon in index.html
-[] add better resolution favicon.ico
+[x] add better resolution favicon.ico
 [x] clear info on logout
 [] delete button on board, list, list item

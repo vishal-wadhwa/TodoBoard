@@ -11,6 +11,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
     '^.+\\.jsx?$': 'babel-jest'
   },
+  transformIgnorePatterns: ['node_modules/(?!(babel-jest|jest-vue-preprocessor|vue-jest|vuetify)/)'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^.+\\.(css)$': 'identity-obj-proxy'

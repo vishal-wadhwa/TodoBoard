@@ -15,7 +15,7 @@ const dummyActions = {
 
 const localActions = {
   async login ({ commit }, payload) {
-    commit('login', { err: 'Invalid credentials!' })
+    commit('login', { err: { type: 'error', msg: 'Invalid credentials!' } })
   },
   async signUp ({ commit }, payload) {
     const data = {

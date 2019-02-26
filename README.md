@@ -40,7 +40,7 @@ yarn run test:unit
 [x] create new board form
 [x] small buttons:save,discard on breakpoint
 [x] adjust padding for lists
-[] notifications
+[x] notifications
 [x] logout button at place of 3 dots
 [] image upload
 [] progress bar
@@ -51,3 +51,4 @@ yarn run test:unit
 [x] add better resolution favicon.ico
 [x] clear info on logout
 [] delete button on board, list, list item
+[] theme color? black?

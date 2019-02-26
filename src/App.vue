@@ -24,6 +24,7 @@
     <v-content>
       <router-view/>
     </v-content>
+    <notify bottom auto-height></notify>
   </v-app>
 </template>
 
@@ -37,9 +38,6 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'App',
   components: { ExtNavDrawer, TitleBar, AppLogo },
-  data () {
-    return {}
-  },
   computed: {
     drawer: {
       get () {

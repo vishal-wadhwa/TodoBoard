@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import actions from './actions.js'
 import router from '@/router.js'
 import storage from '@/utils/storage_utils.js'
@@ -38,14 +39,25 @@ export default {
       router.push({ name: 'home', params: { boardId } })
     },
     createBoard (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
       state.boards.push({
         ...payload,
         lists: []
       })
 
+      Vue.notify({ type: 'success', msg: `Created board ${payload.boardName}` })
       router.push({ name: 'home', params: { boardId: payload._id } })
     },
     createList (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
       const data = { ...payload }
       delete data.boardId
 
@@ -54,8 +66,14 @@ export default {
         ...data,
         list: []
       })
+      Vue.notify({ type: 'success', msg: `Created new list in board ${board.boardName}` })
     },
     createListItem (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
       const data = { ...payload }
       delete data.listId
       delete data.boardId

@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import actions from './actions'
 import storage from '@/utils/storage_utils'
 import router from '@/router'
@@ -15,8 +16,7 @@ export default {
   mutations: {
     login (state, payload) {
       if (payload.err) {
-        // error notif
-        console.log(payload.err)
+        Vue.notify(payload.err)
         return
       }
 
@@ -28,8 +28,7 @@ export default {
     },
     signUp (state, payload) {
       if (payload.err) {
-        // error notif
-        console.log(payload.err)
+        Vue.notify(payload.err)
         return
       }
 

@@ -51,7 +51,7 @@ const localActions = {
 
     commit('createBoard', npayload)
   },
-  async createList ({ state, getters, commit }, payload) {
+  async createList ({ getters, commit }, payload) {
     const bid = getters.activeBoardId
     const _id = bid + ':' + new Date().getTime().toString()
     const npayload = { ...payload, _id }

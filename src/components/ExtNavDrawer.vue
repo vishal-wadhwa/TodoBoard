@@ -45,7 +45,7 @@
         @keydown.enter='onBoardNameSave'
         @keydown.esc='onBoardNameDiscard'
         @click:append-outer='onBoardNameSave'
-        @blur='onBoardNameDiscard'
+        @blur='ev => $emit("end:blur", ev)'
         :error-messages='errMsg'
       ></v-text-field>
     </v-layout>

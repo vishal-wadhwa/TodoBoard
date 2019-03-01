@@ -19,6 +19,7 @@
       @end:board-click='onBoardChange'
       :show-new-field-box='boardForm'
       @end:bname-discard='boardForm = false'
+      @end:blur='boardForm = false'
       @end:bname-save='onBoardCreate'
     ></ext-nav-drawer>
     <v-content>

@@ -4,16 +4,8 @@ import router from '@/router.js'
 import storage from '@/utils/storage_utils.js'
 
 const ID_FIND_CMP = tfId => ob => ob._id === tfId
-const DEFAULT_BOARD = {
-  _id: '1',
-  boardName: 'My board'
-}
 const boardsInit = () => {
   const boardList = storage.readObject('BOARDS', [])
-  if (boardList.length === 0) {
-    boardList.push(DEFAULT_BOARD)
-    storage.writeObject('BOARDS', boardList)
-  }
   return boardList.map(ob => ({ ...ob, lists: [] }))
 }
 

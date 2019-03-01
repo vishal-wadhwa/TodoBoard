@@ -26,11 +26,23 @@
           :to='{name: "home", params: {boardId: board._id}}'
           :title='board.boardName'
           @click='ev => $emit("end:board-click", board, ev)'
+          @mouseover='$set(deleteBtnVisible, board._id, true)'
+          @mouseout='deleteBtnVisible[board._id] = false'
         >
           <v-list-tile-avatar>
             <v-icon>chrome_reader_mode</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-title v-text='board.boardName'></v-list-tile-title>
+          <v-btn
+            flat
+            icon
+            small
+            title
+            v-show='deleteBtnVisible[board._id]'
+            @click.prevent.stop='ev => onBoardDelete(board, ev)'
+          >
+            <v-icon small>delete</v-icon>
+          </v-btn>
         </v-list-tile>
       </v-list>
       <v-text-field
@@ -76,7 +88,8 @@ export default {
     return {
       newBoardName: '',
       ERROR_MSG: 'Board name can\'t be empty',
-      errMsg: ''
+      errMsg: '',
+      deleteBtnVisible: {}
     }
   },
   methods: {
@@ -92,6 +105,10 @@ export default {
       this.$emit('end:bname-discard', ev)
       this.newBoardName = ''
       this.errMsg = ''
+    },
+    onBoardDelete (board, ev) {
+      delete this.deleteBtnVisible[board._id]
+      this.$emit('end:board-delete', board, ev)
     }
   },
   watch: {

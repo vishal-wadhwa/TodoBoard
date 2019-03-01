@@ -24,6 +24,7 @@
           v-for='board in boardList'
           :key='board._id'
           :to='{name: "home", params: {boardId: board._id}}'
+          :title='board.boardName'
           @click='ev => $emit("end:board-click", board, ev)'
         >
           <v-list-tile-avatar>

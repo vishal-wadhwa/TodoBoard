@@ -44,6 +44,16 @@ export default {
       Vue.notify({ type: 'success', msg: `Created board ${payload.boardName}` })
       router.push({ name: 'home', params: { boardId: payload._id } })
     },
+    deleteBoard (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
+      state.boards.splice(ID_FIND_CMP(payload._id), 1)
+      Vue.notify({ type: 'success', msg: `Board ${payload.boardName} successfully deleted` })
+      if (payload._id === router.currentRoute.params.boardId) router.push({ name: 'home' })
+    },
     createList (state, payload) {
       if (payload.err) {
         Vue.notify(payload.err)

@@ -13,6 +13,9 @@ const dummyActions = {
 
     commit('createBoard', npayload)
   },
+  async deleteBoard ({ commit }, payload) {
+    commit('deleteBoard', payload)
+  },
   async createList ({ commit, getters }, payload) {
     const bid = getters.activeBoardId
     const _id = bid + ':' + new Date().getTime().toString()
@@ -33,6 +36,7 @@ const localActions = {
   async loadBoard ({ state, commit }, boardId) {
     const payload = { boardId }
     const board = state.boards.find(ID_FIND_CMP(boardId))
+
     if (board.lists.length > 0) {
       payload.data = board.lists
     } else {
@@ -50,6 +54,23 @@ const localActions = {
     storage.writeObject('BOARDS', boardItems)
 
     commit('createBoard', npayload)
+  },
+  async deleteBoard ({ commit }, payload) {
+    const _id = payload._id
+    const boardItems = storage.readObject('BOARDS', [])
+    const delBIdx = boardItems.findIndex(ID_FIND_CMP(_id))
+
+    boardItems.splice(delBIdx, 1)
+
+    const bItemsWithoutList = boardItems.map(bi => {
+      const { lists, ...biListLess } = bi
+      return biListLess
+    })
+
+    storage.writeObject('BOARDS', bItemsWithoutList)
+    storage.clear('BOARD_DATA_' + _id)
+
+    commit('deleteBoard', payload)
   },
   async createList ({ getters, commit }, payload) {
     const bid = getters.activeBoardId

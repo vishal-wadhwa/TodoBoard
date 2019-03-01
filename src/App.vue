@@ -17,6 +17,7 @@
       v-model='drawer'
       :board-list='boardNames'
       @end:board-click='onBoardChange'
+      @end:board-delete='onBoardDelete'
       :show-new-field-box='boardForm'
       @end:bname-discard='boardForm = false'
       @end:blur='boardForm = false'
@@ -59,13 +60,16 @@ export default {
     ...mapGetters('board', ['boardNames'])
   },
   methods: {
-    ...mapActions('board', ['loadBoard', 'createBoard']),
+    ...mapActions('board', ['loadBoard', 'createBoard', 'deleteBoard']),
     async onBoardChange (board, ev) {
       await this.loadBoard(board._id)
     },
     async onBoardCreate (boardName, ev) {
       this.boardForm = false
       await this.createBoard({ boardName })
+    },
+    async onBoardDelete (board, ev) {
+      await this.deleteBoard(board)
     }
   }
 }

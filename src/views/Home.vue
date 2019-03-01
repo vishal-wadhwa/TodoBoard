@@ -11,7 +11,7 @@
         <v-icon>add</v-icon>
         <v-icon>close</v-icon>
       </v-btn>
-      <v-tooltip left :value='true' nudge-left='20' :close-delay='365*24*60*60*1000'>
+      <v-tooltip left :value='activeBoard' nudge-left='20' :close-delay='365*24*60*60*1000'>
         <v-btn
           fab
           dark
@@ -19,6 +19,7 @@
           color='green darken-2'
           slot='activator'
           @click='listForm = true; $refs["listForm"] && $nextTick($refs["listForm"].focus)'
+          v-show='activeBoard'
         >
           <v-icon>playlist_add</v-icon>
         </v-btn>Create new list
@@ -69,11 +70,14 @@ export default {
     ...mapActions('board', ['createListItem', 'createList'])
   },
   computed: {
+    activeBoard () {
+      return this.$store.getters['board/activeBoard']
+    },
     boardName () {
-      return this.$store.getters['board/activeBoard'].boardName
+      return this.activeBoard ? this.activeBoard.boardName : ''
     },
     boardLists () {
-      return this.$store.getters['board/activeBoard'].lists
+      return this.activeBoard ? this.activeBoard.lists : []
     },
     drawer: {
       get () {
@@ -101,7 +105,7 @@ export default {
     }
   },
   async created () {
-    await this.$store.dispatch('board/loadBoard', this.$store.getters['board/activeBoardId'])
+    if (this.activeBoard) { await this.$store.dispatch('board/loadBoard', this.activeBoard._id) }
   }
 }
 </script>

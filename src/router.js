@@ -10,20 +10,30 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: Login
     },
     {
-      path: '/:boardId',
+      path: '/:boardId?',
       name: 'home',
       component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
+      meta: { requiresAuth: true },
       beforeEnter: (to, from, next) => {
         if (!store.state.board.boards.some(v => v._id === to.params.boardId)) {
-          next({
-            name: 'home',
-            params: { boardId: store.state.board.boards[0]._id }
-          })
+          const cfg = { name: 'home' }
+
+          if (store.state.board.boards.length) {
+            cfg.params = { boardId: store.state.board.boards[0]._id }
+          }
+
+          if (to.params.boardId) {
+            Vue.nextTick(() => Vue.notify({ type: 'error', msg: 'The board you are trying to access does not exist.' }))
+            next(cfg)
+          } else {
+            if (cfg.params) next(cfg)
+            else next()
+          }
         } else next()
       }
     }
@@ -31,15 +41,8 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.fullPath !== '/' && !store.getters['login/isLoggedIn']) next('/')
-  else if (to.fullPath === '/' && store.getters['login/isLoggedIn']) {
-    next({
-      name: 'home',
-      params: {
-        boardId: store.state.board.boards[0]._id
-      }
-    })
-  } else next()
+  if (to.meta.requiresAuth && !store.getters['login/isLoggedIn']) next({ name: 'login' })
+  else next()
 })
 
 export default router

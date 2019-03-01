@@ -24,7 +24,8 @@ export default {
         fullname: payload.fullname,
         email: payload.email
       }
-      router.push({ name: 'home', params: { boardId: '1' } }) // replace with constant
+
+      router.push({ name: 'home' })
     },
     signUp (state, payload) {
       if (payload.err) {
@@ -36,10 +37,12 @@ export default {
         fullname: payload.fullname,
         email: payload.email
       }
-      router.push({ name: 'home', params: { boardId: '1' } })
+
+      router.push({ name: 'home' })
     },
     logout (state) {
       state.user = null
+
       router.push({ name: 'login' })
     }
   },

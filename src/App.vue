@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <title-bar
-      v-if='$route.fullPath !== "/"'
+      v-if='$route.name !== "login"'
       title='Todo board'
       @tb:log-out='$store.dispatch("login/logout")'
     >
@@ -13,7 +13,7 @@
       </v-toolbar-title>
     </title-bar>
     <ext-nav-drawer
-      v-if='$route.fullPath !== "/"'
+      v-if='$route.name !== "login"'
       v-model='drawer'
       :board-list='boardNames'
       @end:board-click='onBoardChange'

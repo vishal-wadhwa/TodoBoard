@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1`] = `
-<aside class="pa-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`] = `
+<aside class="py-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
   <div class="layout column">
     <div class="flex text-xs-center">
       <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
@@ -13,27 +13,99 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
         </div>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjkgh1" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjkgh1</div>
+          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjhv2" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhv2</div>
+          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjhvkjh3" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhvkjh3</div>
+          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
+        </router-link-stub>
+      </div>
+    </div>
+    <div class="v-input ml-4 my-0 pa-0 body-1 v-text-field v-text-field--single-line v-text-field--solo-flat v-text-field--placeholder v-input--is-label-active v-input--is-dirty theme--light" style="display: none;">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><input type="text" placeholder="My board"></div>
+          <div class="v-input__append-inner">
+            <div class="v-input__icon v-input__icon--clear"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">clear</i></div>
+          </div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+      <div class="v-input__append-outer">
+        <div class="v-input__icon v-input__icon--append-outer"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">check_circle</i></div>
+      </div>
+    </div>
+  </div>
+  <div class="v-navigation-drawer__border"></div>
+</aside>
+`;
+
+exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1`] = `
+<aside class="py-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+  <div class="layout column">
+    <div class="flex text-xs-center">
+      <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
+    </div>
+    <div class="v-list v-list--dense v-list--subheader theme--light">
+      <div>
+        <div class="v-list__tile theme--light">
+          <div class="v-subheader mt-3 theme--light">Boards</div>
+        </div>
+      </div>
+      <div>
+        <router-link-stub title="bjkgh1" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+          <div class="v-list__tile__avatar">
+            <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
+          </div>
+          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
+        </router-link-stub>
+      </div>
+      <div>
+        <router-link-stub title="bjhv2" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+          <div class="v-list__tile__avatar">
+            <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
+          </div>
+          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
+        </router-link-stub>
+      </div>
+      <div>
+        <router-link-stub title="bjhvkjh3" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+          <div class="v-list__tile__avatar">
+            <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
+          </div>
+          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
     </div>
@@ -61,7 +133,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
 `;
 
 exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] = `
-<aside class="pa-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+<aside class="py-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
   <div class="layout column">
     <div class="flex text-xs-center">
       <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
@@ -73,27 +145,33 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] =
         </div>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjkgh1" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjkgh1</div>
+          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjhv2" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhv2</div>
+          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
       <div>
-        <router-link-stub class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
+        <router-link-stub title="bjhvkjh3" class="v-list__tile v-list__tile--link v-list__tile--avatar theme--light">
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhvkjh3</div>
+          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+            <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
+          </button>
         </router-link-stub>
       </div>
     </div>

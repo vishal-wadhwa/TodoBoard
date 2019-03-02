@@ -163,7 +163,7 @@ describe('Board.vue', () => {
     expect(emitArr[0][1]).toBeInstanceOf(Event)
   })
 
-  it('emits "b:item-delete" when form emits "bl:item-delete"', async () => {
+  it('emits "b:item-delete" when item emits "bl:item-delete"', async () => {
     const wrapper = factory({
       propsData: { boardName, lists },
       localVue,
@@ -181,6 +181,26 @@ describe('Board.vue', () => {
     expect(emitArr).toBeDefined()
     expect(emitArr.length).toBe(1)
     expect(emitArr[0][0]).toEqual({ listId: lists[2]._id, listItemId: randomId })
+    expect(emitArr[0][1]).toBeInstanceOf(Event)
+  })
+
+  it('emits "b:list-delete" when item emits "bl:delete"', async () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue,
+      stubs: { 'list-item-form': true },
+      sync: false
+    }, true)
+
+    const baseList = wrapper.findAll(BaseList).at(2)
+    baseList.vm.$emit('bl:delete', new Event('click'))
+
+    await wrapper.vm.$nextTick()
+
+    const emitArr = wrapper.emitted('b:list-delete')
+    expect(emitArr).toBeDefined()
+    expect(emitArr.length).toBe(1)
+    expect(emitArr[0][0]).toEqual(lists[2]._id)
     expect(emitArr[0][1]).toBeInstanceOf(Event)
   })
 

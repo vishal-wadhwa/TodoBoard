@@ -7,9 +7,10 @@ exports[`Board.vue should match snapshot 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List1
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(171, 205, 239); border-color: #abcdef;">2</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List1</span><span class="v-badge__badge" style="background-color: rgb(171, 205, 239); border-color: #abcdef;"><span>2</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#abcdef" view="full"></base-list-item-stub>
           <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#abcdef" view="full"></base-list-item-stub>
@@ -104,9 +105,10 @@ exports[`Board.vue should match snapshot 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List2
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(18, 205, 239); border-color: #12cdef;">2</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List2</span><span class="v-badge__badge" style="background-color: rgb(18, 205, 239); border-color: #12cdef;"><span>2</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#12cdef" view="full"></base-list-item-stub>
           <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#12cdef" view="full"></base-list-item-stub>
@@ -201,9 +203,10 @@ exports[`Board.vue should match snapshot 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List3
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(161, 34, 239); border-color: #a122ef;">1</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List3</span><span class="v-badge__badge" style="background-color: rgb(161, 34, 239); border-color: #a122ef;"><span>1</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="duzjukve" desc="giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun" tags="magew,wobsudig" ribbon-color="#a122ef" view="full"></base-list-item-stub>
           <div class="layout justify-center"><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark" style="background-color: rgb(161, 34, 239); border-color: #a122ef;">
@@ -305,9 +308,10 @@ exports[`Board.vue should match snapshot when form is visible 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List1
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(171, 205, 239); border-color: #abcdef;">2</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List1</span><span class="v-badge__badge" style="background-color: rgb(171, 205, 239); border-color: #abcdef;"><span>2</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#abcdef" view="full"></base-list-item-stub>
           <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#abcdef" view="full"></base-list-item-stub>
@@ -402,9 +406,10 @@ exports[`Board.vue should match snapshot when form is visible 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List2
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(18, 205, 239); border-color: #12cdef;">2</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List2</span><span class="v-badge__badge" style="background-color: rgb(18, 205, 239); border-color: #12cdef;"><span>2</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#12cdef" view="full"></base-list-item-stub>
           <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#12cdef" view="full"></base-list-item-stub>
@@ -499,9 +504,10 @@ exports[`Board.vue should match snapshot when form is visible 1`] = `
     <div class="flex lg4 md6 xs12">
       <div class="layout column">
         <div class="container fluid pa-2">
-          <div class="headline mb-3 font-weight-light">
-            List3
-            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(161, 34, 239); border-color: #a122ef;">1</div>
+          <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">List3</span><span class="v-badge__badge" style="background-color: rgb(161, 34, 239); border-color: #a122ef;"><span>1</span></span></span>
+            <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+            </button>
           </div>
           <base-list-item-stub title="duzjukve" desc="giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun" tags="magew,wobsudig" ribbon-color="#a122ef" view="full"></base-list-item-stub>
           <div class="layout justify-center"><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark" style="background-color: rgb(161, 34, 239); border-color: #a122ef;">

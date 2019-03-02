@@ -20,6 +20,7 @@
             :header='boardItem.header'
             :list='boardItem.list'
             @bl:item-delete='(itemId, ev) => $emit("b:item-delete", {listId: boardItem._id, listItemId: itemId}, ev)'
+            @bl:delete='ev => $emit("b:list-delete", boardItem._id, ev)'
           >
             <template slot='new-item'>
               <v-layout v-show='boardItem._state === STATE_ITEM_NORMAL' justify-center>

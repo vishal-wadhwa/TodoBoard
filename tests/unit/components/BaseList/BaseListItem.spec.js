@@ -103,6 +103,31 @@ describe('BaseListItem.vue', () => {
     expect(emitObj[0][0]).toBeInstanceOf(Event)
   })
 
+  it('shows delete button following mouseover/mouseout', async () => {
+    const view = 'full'
+    const wrapper = factory({
+      propsData: { title, tags, desc, view },
+      stubs: ['v-card-text', 'v-card-actions']
+    }, true)
+
+    const delBtn = wrapper.find({ name: 'v-btn' })
+
+    expect(delBtn.isVisible()).toBeFalsy()
+    expect(wrapper.vm.showDeleteIcon).toBeFalsy()
+
+    wrapper.trigger('mouseover')
+    await wrapper.vm.$nextTick()
+
+    expect(delBtn.isVisible()).toBeTruthy()
+    expect(wrapper.vm.showDeleteIcon).toBeTruthy()
+
+    wrapper.trigger('mouseout')
+    await wrapper.vm.$nextTick()
+
+    expect(delBtn.isVisible()).toBeFalsy()
+    expect(wrapper.vm.showDeleteIcon).toBeFalsy()
+  })
+
   it('should match full view snapshot', () => {
     const view = 'full'
     const wrapper = factory({

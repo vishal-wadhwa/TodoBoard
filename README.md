@@ -55,6 +55,6 @@ yarn run test:unit
 [x] bug: same type icon all lists
 [x] revert padding change ExtNavDrawer.vue
 [x] ExtNavDrawer.vue should emit only ids
-[] ListItem delete on hover only 
+[x] ListItem delete on hover only 
 [x] add dummy deletes
 [x] bugfix: _id -> boardId

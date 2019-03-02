@@ -1,5 +1,11 @@
 <template>
-  <v-container fluid class='pa-1' @click='onItemClickHandler'>
+  <v-container
+    fluid
+    class='pa-1'
+    @click='onItemClickHandler'
+    @mouseover='showDeleteIcon = true'
+    @mouseout='showDeleteIcon = false'
+  >
     <v-card v-if='!isNewView'>
       <v-layout
         row
@@ -15,7 +21,6 @@
             <slot name='vf-title' :title='title' :view='view'>
               <v-card-title class='pa-0'>
                 {{title}}
-                <v-spacer></v-spacer>
                 <v-btn
                   flat
                   icon
@@ -23,6 +28,9 @@
                   class='ma-0'
                   color='black'
                   @click.stop='ev => $emit("bli:delete", ev)'
+                  v-show='showDeleteIcon'
+                  absolute
+                  right
                 >
                   <v-icon small>close</v-icon>
                 </v-btn>
@@ -72,7 +80,8 @@ export default {
       FULL_VIEW: FULL_VIEW,
       COMPACT_VIEW: COMPACT_VIEW,
       VIEW_TYPES: VIEW_TYPES,
-      NEW_VIEW: NEW_VIEW
+      NEW_VIEW: NEW_VIEW,
+      showDeleteIcon: false
     }
   },
   props: {

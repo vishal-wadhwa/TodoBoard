@@ -5,6 +5,7 @@
       :board-name='boardName'
       @b:new-list-item='onListItemCreate'
       @b:item-delete='onListItemDelete'
+      @b:list-delete='onListDelete'
       class='pa-0'
     ></board>
     <v-speed-dial v-model='fab' fixed right bottom>
@@ -71,7 +72,10 @@ export default {
     async onListItemDelete (data, ev) {
       await this.deleteListItem(data)
     },
-    ...mapActions('board', ['createListItem', 'createList', 'deleteListItem'])
+    async onListDelete (listId, ev) {
+      await this.deleteList(listId)
+    },
+    ...mapActions('board', ['createListItem', 'createList', 'deleteListItem', 'deleteList'])
   },
   computed: {
     activeBoard () {

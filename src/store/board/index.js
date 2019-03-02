@@ -50,7 +50,9 @@ export default {
         return
       }
 
-      state.boards.splice(ID_FIND_CMP(payload._id), 1)
+      const delIdx = state.boards.findIndex(ID_FIND_CMP(payload._id), 1)
+      state.boards.splice(delIdx, 1)
+
       Vue.notify({ type: 'success', msg: `Board ${payload.boardName} successfully deleted` })
       if (payload._id === router.currentRoute.params.boardId) router.push({ name: 'home' })
     },
@@ -69,6 +71,18 @@ export default {
         list: []
       })
       Vue.notify({ type: 'success', msg: `Created new list in board ${board.boardName}` })
+    },
+    deleteList (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
+      const board = state.boards.find(ID_FIND_CMP(payload.boardId))
+      const delIdx = board.lists.findIndex(ID_FIND_CMP(payload.listId))
+
+      Vue.notify({ type: 'success', msg: `List ${board.lists[delIdx].header} successfully deleted` })
+      board.lists.splice(delIdx, 1)
     },
     createListItem (state, payload) {
       if (payload.err) {
@@ -95,6 +109,7 @@ export default {
       const board = state.boards.find(ID_FIND_CMP(boardId))
       const list = board.lists.find(ID_FIND_CMP(listId))
       const delIdx = list.list.findIndex(ID_FIND_CMP(listItemId))
+
       list.list.splice(delIdx, 1)
     }
   },

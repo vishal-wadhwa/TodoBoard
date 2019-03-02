@@ -52,7 +52,7 @@ yarn run test:unit
 [x] clear info on logout
 [x] delete button on board, list, list item
 [] theme color? black?
-[] bug: same type icon all lists
+[x] bug: same type icon all lists
 [x] revert padding change ExtNavDrawer.vue
 [x] ExtNavDrawer.vue should emit only ids
 [] ListItem delete on hover only 

@@ -97,7 +97,8 @@ export default {
 
       const board = state.boards.find(ID_FIND_CMP(payload.boardId))
       const list = board.lists.find(ID_FIND_CMP(payload.listId))
-      list.list.push({ ...data, type: list.type })
+
+      list.list.push(data)
     },
     deleteListItem (state, payload) {
       if (payload.err) {

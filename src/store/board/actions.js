@@ -26,10 +26,18 @@ const dummyActions = {
   async deleteList ({ commit, getters }, listId) {
     commit('deleteList', { boardId: getters.activeBoardId, listId })
   },
-  async createListItem ({ commit, getters }, payload) {
+  async createListItem ({ state, commit, getters }, payload) {
     const bid = getters.activeBoardId
     const _id = payload.listId + ':' + new Date().getTime().toString()
-    const npayload = { ...payload.listItem, _id, boardId: bid, listId: payload.listId }
+    const board = state.boards.find(ID_FIND_CMP(bid))
+    const list = board.lists.find(ID_FIND_CMP(payload.listId))
+    const npayload = {
+      ...payload.listItem,
+      _id,
+      boardId: bid,
+      listId: payload.listId,
+      type: list.type
+    }
 
     commit('createListItem', npayload)
   },
@@ -102,9 +110,9 @@ const localActions = {
   async createListItem ({ commit, getters }, payload) {
     const bid = getters.activeBoardId
     const _id = payload.listId + ':' + new Date().getTime().toString()
-    const npayload = { ...payload.listItem, _id }
     const listItems = storage.readObject('BOARD_DATA_' + bid, [])
     const list = listItems.find(ID_FIND_CMP(payload.listId))
+    const npayload = { ...payload.listItem, _id, type: list.type }
 
     if (Array.isArray(list.list)) list.list.push(npayload)
     else list.list = [npayload]

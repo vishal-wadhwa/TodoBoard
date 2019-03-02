@@ -83,6 +83,19 @@ export default {
       const board = state.boards.find(ID_FIND_CMP(payload.boardId))
       const list = board.lists.find(ID_FIND_CMP(payload.listId))
       list.list.push({ ...data, type: list.type })
+    },
+    deleteListItem (state, payload) {
+      if (payload.err) {
+        Vue.notify(payload.err)
+        return
+      }
+
+      const { listId, listItemId, boardId } = payload
+
+      const board = state.boards.find(ID_FIND_CMP(boardId))
+      const list = board.lists.find(ID_FIND_CMP(listId))
+      const delIdx = list.list.findIndex(ID_FIND_CMP(listItemId))
+      list.list.splice(delIdx, 1)
     }
   },
   actions

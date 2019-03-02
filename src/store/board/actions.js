@@ -96,6 +96,18 @@ const localActions = {
     storage.writeObject('BOARD_DATA_' + bid, listItems)
 
     commit('createListItem', { ...npayload, boardId: bid, listId: payload.listId })
+  },
+  async deleteListItem ({ commit, getters }, payload) {
+    const bid = getters.activeBoardId
+    const { listId, listItemId } = payload
+    const lists = storage.readObject('BOARD_DATA_' + bid, [])
+    const list = lists.find(ID_FIND_CMP(listId))
+
+    list.list.splice(list.list.findIndex(ID_FIND_CMP(listItemId)), 1)
+
+    storage.writeObject('BOARD_DATA_' + bid, lists)
+
+    commit('deleteListItem', { boardId: bid, ...payload })
   }
 }
 

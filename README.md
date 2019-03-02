@@ -52,3 +52,4 @@ yarn run test:unit
 [x] clear info on logout
 [] delete button on board, list, list item
 [] theme color? black?
+[] bug: same type icon all lists

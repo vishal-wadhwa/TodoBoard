@@ -13,6 +13,7 @@
     </slot>
     <base-list-item
       @bli:click='(data, ev) => onItemClickHandler(item._id, data, ev)'
+      @bli:delete='ev => $emit("bl:item-delete", item._id, ev)'
       v-for='item in dataList'
       :key='item._id'
       :title='item.title'

@@ -148,6 +148,26 @@ describe('BaseList.vue', () => {
     expect(emitObj).toBeTruthy()
   })
 
+  it('emits "bl:item-delete" when list item fires "bli:delete"', () => {
+    const wrapper = factory({
+      propsData: { header, list },
+      localVue
+    }, true)
+
+    const listOfItemWrappers = wrapper.findAll(BaseListItem)
+
+    listOfItemWrappers.at(0).vm.$emit('bli:delete', new Event('click'))
+    listOfItemWrappers.at(2).vm.$emit('bli:delete', new Event('click'))
+
+    const emitObj = wrapper.emitted('bl:item-delete')
+    expect(emitObj).toBeTruthy()
+    expect(emitObj.length).toBe(2)
+    expect(emitObj[0][0]).toBe(list[0]._id)
+    expect(emitObj[0][1]).toBeInstanceOf(Event)
+    expect(emitObj[1][0]).toBe(list[2]._id)
+    expect(emitObj[1][1]).toBeInstanceOf(Event)
+  })
+
   it('should match snapshot', () => {
     const wrapper = factory({
       propsData: { header, list },

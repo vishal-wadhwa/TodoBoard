@@ -297,3 +297,301 @@ exports[`Board.vue should match snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`Board.vue should match snapshot when form is visible 1`] = `
+<div class="container fluid">
+  <div class="headline">Create new board</div>
+  <div class="layout wrap">
+    <div class="flex lg4 md6 xs12">
+      <div class="layout column">
+        <div class="container fluid pa-2">
+          <div class="headline mb-3 font-weight-light">
+            List1
+            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(171, 205, 239); border-color: #abcdef;">2</div>
+          </div>
+          <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#abcdef" view="full"></base-list-item-stub>
+          <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#abcdef" view="full"></base-list-item-stub>
+          <div class="layout justify-center" style="display: none;"><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark" style="background-color: rgb(171, 205, 239); border-color: #abcdef;">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">add</i></div>
+            </button></div>
+          <div class="ma-1 v-card theme--light" style="">
+            <div class="v-card__title title">Create new note</div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__text pb-0">
+              <form novalidate="novalidate" class="v-form">
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">title</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Title</label><input aria-label="Title" autofocus="autofocus" type="text"></div>
+                      <div class="v-input__append-inner">
+                        <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                      </div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-textarea v-text-field v-text-field--box v-text-field--enclosed theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">description</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Description
+                            <small>(optional)</small></div>
+                        </label><textarea rows="3"></textarea></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed v-select v-select--chips v-select--chips--small v-autocomplete theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">category</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-select__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Tags
+                            <small>(optional)</small></div>
+                        </label>
+                        <div class="v-select__selections"><input type="text" autocomplete="off" role="combobox"></div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                        </div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon material-icons theme--light">arrow_drop_down</i></div>
+                        </div>
+                      </div>
+                      <div class="v-menu"></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="v-card__actions pt-0 pb-3">
+              <div class="layout justify-end"><button type="button" class="v-btn v-btn--round theme--light error">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">clear</i>&nbsp;Discard
+                  </div>
+                </button> <button type="button" class="v-btn v-btn--round theme--light success">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">check_circle_outline</i>&nbsp;Save
+                  </div>
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex lg4 md6 xs12">
+      <div class="layout column">
+        <div class="container fluid pa-2">
+          <div class="headline mb-3 font-weight-light">
+            List2
+            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(18, 205, 239); border-color: #12cdef;">2</div>
+          </div>
+          <base-list-item-stub title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="#12cdef" view="full"></base-list-item-stub>
+          <base-list-item-stub title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="#12cdef" view="full"></base-list-item-stub>
+          <div class="layout justify-center"><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark" style="background-color: rgb(18, 205, 239); border-color: #12cdef;">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">add</i></div>
+            </button></div>
+          <div class="ma-1 v-card theme--light" style="display: none;">
+            <div class="v-card__title title">Create new note</div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__text pb-0">
+              <form novalidate="novalidate" class="v-form">
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">title</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Title</label><input aria-label="Title" autofocus="autofocus" type="text"></div>
+                      <div class="v-input__append-inner">
+                        <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                      </div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-textarea v-text-field v-text-field--box v-text-field--enclosed theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">description</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Description
+                            <small>(optional)</small></div>
+                        </label><textarea rows="3"></textarea></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed v-select v-select--chips v-select--chips--small v-autocomplete theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">category</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-select__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Tags
+                            <small>(optional)</small></div>
+                        </label>
+                        <div class="v-select__selections"><input type="text" autocomplete="off" role="combobox"></div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                        </div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon material-icons theme--light">arrow_drop_down</i></div>
+                        </div>
+                      </div>
+                      <div class="v-menu"></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="v-card__actions pt-0 pb-3">
+              <div class="layout justify-end"><button type="button" class="v-btn v-btn--round theme--light error">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">clear</i>&nbsp;Discard
+                  </div>
+                </button> <button type="button" class="v-btn v-btn--round theme--light success">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">check_circle_outline</i>&nbsp;Save
+                  </div>
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex lg4 md6 xs12">
+      <div class="layout column">
+        <div class="container fluid pa-2">
+          <div class="headline mb-3 font-weight-light">
+            List3
+            <div class="v-avatar white--text ml-3" style="height: 30px; width: 30px; background-color: rgb(161, 34, 239); border-color: #a122ef;">1</div>
+          </div>
+          <base-list-item-stub title="duzjukve" desc="giv howseb ikopir lo vehladdih delolir uj dafassu joig mocun" tags="magew,wobsudig" ribbon-color="#a122ef" view="full"></base-list-item-stub>
+          <div class="layout justify-center"><button type="button" class="v-btn v-btn--floating v-btn--small theme--dark" style="background-color: rgb(161, 34, 239); border-color: #a122ef;">
+              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">add</i></div>
+            </button></div>
+          <div class="ma-1 v-card theme--light" style="display: none;">
+            <div class="v-card__title title">Create new note</div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__text pb-0">
+              <form novalidate="novalidate" class="v-form">
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed v-input--is-focused theme--light primary--text">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light primary--text">title</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light primary--text" style="left: 0px; position: absolute;">Title</label><input aria-label="Title" autofocus="autofocus" type="text"></div>
+                      <div class="v-input__append-inner">
+                        <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light primary--text"></i></div>
+                      </div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light primary--text">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-textarea v-text-field v-text-field--box v-text-field--enclosed theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">description</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Description
+                            <small>(optional)</small></div>
+                        </label><textarea rows="3"></textarea></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-input v-text-field v-text-field--box v-text-field--enclosed v-select v-select--chips v-select--chips--small v-autocomplete theme--light">
+                  <div class="v-input__prepend-outer">
+                    <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">category</i></div>
+                  </div>
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-select__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">
+                          <div>
+                            Tags
+                            <small>(optional)</small></div>
+                        </label>
+                        <div class="v-select__selections"><input type="text" autocomplete="off" role="combobox"></div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                        </div>
+                        <div class="v-input__append-inner">
+                          <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon material-icons theme--light">arrow_drop_down</i></div>
+                        </div>
+                      </div>
+                      <div class="v-menu"></div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="v-card__actions pt-0 pb-3">
+              <div class="layout justify-end"><button type="button" class="v-btn v-btn--round theme--light error">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">clear</i>&nbsp;Discard
+                  </div>
+                </button> <button type="button" class="v-btn v-btn--round theme--light success">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">check_circle_outline</i>&nbsp;Save
+                  </div>
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

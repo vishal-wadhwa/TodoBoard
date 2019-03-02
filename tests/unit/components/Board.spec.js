@@ -1,5 +1,7 @@
 import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import Board from '@/components/Board'
+import BaseList from '@/components/BaseList/BaseList'
+import ListItemForm from '@/components/ListItemForm'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
 Vue.use(Vuetify)
@@ -97,14 +99,116 @@ describe('Board.vue', () => {
     expect(wrapper.text()).toMatch(boardName)
   })
 
+  it('sets initial state of each board item to normal', () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue
+    })
+
+    for (const bi of wrapper.vm.boardItems) {
+      expect(bi._state).toBe(wrapper.vm.STATE_ITEM_NORMAL)
+    }
+  })
+
+  it('updates the state of the board item for which the add button is clicked', async () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue,
+      stubs: { 'list-item-form': true },
+      sync: false
+    }, true)
+
+    expect(wrapper.vm.boardItems[1]._state).toBe(wrapper.vm.STATE_ITEM_NORMAL)
+
+    const addButtonContainers = wrapper.findAll(BaseList)
+    addButtonContainers.at(1).find('div.layout.justify-center button').trigger('click')
+
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.vm.boardItems[1]._state).toBe(wrapper.vm.STATE_ITEM_ADD)
+  })
+
+  it('toggles visibility of form when state is changed', async () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue,
+      sync: false
+    })
+
+    const listItemForm = wrapper.find(ListItemForm)
+    expect(listItemForm.isVisible()).toBeFalsy()
+    wrapper.vm.boardItems[0]._state = wrapper.vm.STATE_ITEM_ADD
+
+    await wrapper.vm.$nextTick()
+
+    expect(listItemForm.isVisible()).toBeTruthy()
+  })
+
+  it('emits "b:new-list-item" when form emits "lif:save"', async () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue,
+      sync: false
+    }, true)
+
+    const listItemForm = wrapper.findAll(ListItemForm).at(1)
+    listItemForm.vm.$emit('lif:save', {}, new Event('click'))
+
+    await wrapper.vm.$nextTick()
+
+    const emitArr = wrapper.emitted('b:new-list-item')
+    expect(emitArr).toBeDefined()
+    expect(emitArr.length).toBe(1)
+    expect(emitArr[0][0]).toEqual({ listId: lists[1]._id, listItem: {} })
+    expect(emitArr[0][1]).toBeInstanceOf(Event)
+  })
+
+  it('emits "b:item-delete" when form emits "bl:item-delete"', async () => {
+    const wrapper = factory({
+      propsData: { boardName, lists },
+      localVue,
+      stubs: { 'list-item-form': true },
+      sync: false
+    }, true)
+
+    const randomId = 2332
+    const baseList = wrapper.findAll(BaseList).at(2)
+    baseList.vm.$emit('bl:item-delete', randomId, new Event('click'))
+
+    await wrapper.vm.$nextTick()
+
+    const emitArr = wrapper.emitted('b:item-delete')
+    expect(emitArr).toBeDefined()
+    expect(emitArr.length).toBe(1)
+    expect(emitArr[0][0]).toEqual({ listId: lists[2]._id, listItemId: randomId })
+    expect(emitArr[0][1]).toBeInstanceOf(Event)
+  })
+
   it('should match snapshot', () => {
     const wrapper = factory({
       localVue,
       propsData: { boardName, lists },
-      stubs: ['base-list-item'],
+      stubs: { 'base-list-item': true },
       sync: false
     }, true)
 
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('should match snapshot when form is visible', async () => {
+    const wrapper = factory({
+      localVue,
+      propsData: { boardName, lists },
+      stubs: { 'base-list-item': true },
+      sync: false
+    }, true)
+
+    const listItemForm = wrapper.find(ListItemForm)
+    wrapper.vm.boardItems[0]._state = wrapper.vm.STATE_ITEM_ADD
+
+    await wrapper.vm.$nextTick()
+
+    expect(listItemForm.isVisible()).toBeTruthy()
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

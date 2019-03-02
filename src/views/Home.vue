@@ -110,10 +110,30 @@ export default {
       set (val) {
         this.$store.commit('setListFormState', val)
       }
+    },
+    boards () {
+      return this.$store.state.board.boards
     }
   },
   async created () {
     if (this.activeBoard) { await this.$store.dispatch('board/loadBoard', this.activeBoard._id) }
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (!this.boards.some(v => v._id === to.params.boardId)) {
+      const cfg = { name: 'home' }
+
+      if (this.boards.length) {
+        cfg.params = { boardId: this.boards[0]._id }
+      }
+
+      if (to.params.boardId) {
+        this.$nextTick(() => this.$notify({ type: 'error', msg: 'The board you are trying to access does not exist.' }))
+        next(cfg)
+      } else {
+        if (cfg.params) next(cfg)
+        else next()
+      }
+    } else next()
   }
 }
 </script>

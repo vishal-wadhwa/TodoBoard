@@ -15,7 +15,7 @@ describe('BaseList.vue', () => {
     // localVue.use(Vuetify)
   })
 
-  const header = 'List1'
+  const header = 'Listxyz' // non numeric header for showCount tests
   const showCount = false
   const list = [{
     'title': 'sanmu',
@@ -49,8 +49,9 @@ describe('BaseList.vue', () => {
       propsData: { header },
       localVue
     })
-    const avatarWrapper = wrapper.find('div.headline :first-child')
-    expect(avatarWrapper.text()).toMatch('0')
+
+    const badgeWrapper = wrapper.find({ name: 'v-badge' })
+    expect(badgeWrapper.text()).toMatch('0')
   })
 
   it('does not show count when prop set to `false`', () => {
@@ -58,8 +59,9 @@ describe('BaseList.vue', () => {
       propsData: { showCount, header },
       localVue
     })
-    const avatarWrapper = wrapper.find('div.headline :first-child')
-    expect(avatarWrapper.exists()).toBeFalsy()
+
+    const badgeWrapper = wrapper.find({ name: 'v-badge' })
+    expect(badgeWrapper.text()).not.toMatch('0')
   })
 
   it('renders only 1 new list item when list is not passed', () => {
@@ -76,10 +78,12 @@ describe('BaseList.vue', () => {
       propsData: { header, list },
       localVue
     })
+
     const baseListItems = wrapper.findAll(BaseListItem)
+    const badgeWrapper = wrapper.find({ name: 'v-badge' })
+
     expect(baseListItems.length).toEqual(1 + list.length)
-    const avatarWrapper = wrapper.find('div.headline :first-child')
-    expect(avatarWrapper.text()).toMatch(list.length + '')
+    expect(badgeWrapper.text()).toMatch(list.length + '')
   })
 
   // not updating synchronously because of [this](https://github.com/vuejs/vue-test-utils/issues/676)
@@ -94,8 +98,8 @@ describe('BaseList.vue', () => {
 
     let baseListItems = wrapper.findAll(BaseListItem)
     expect(baseListItems.length).toEqual(1 + listCopy.length)
-    let avatarWrapper = wrapper.find('div.headline :first-child')
-    expect(avatarWrapper.text()).toMatch(listCopy.length + '')
+    let badgeWrapper = wrapper.find({ name: 'v-badge' })
+    expect(badgeWrapper.text()).toMatch(listCopy.length + '')
     // add new element
     listCopy.push({
       '_id': '29',
@@ -109,8 +113,8 @@ describe('BaseList.vue', () => {
     setTimeout(() => {
       baseListItems = wrapper.findAll(BaseListItem)
       expect(baseListItems.length).toEqual(1 + listCopy.length)
-      avatarWrapper = wrapper.find('div.headline :first-child')
-      expect(avatarWrapper.text()).toMatch(listCopy.length + '')
+      badgeWrapper = wrapper.find({ name: 'v-badge' })
+      expect(badgeWrapper.text()).toMatch(listCopy.length + '')
     }, 0)
     // })
   })
@@ -146,6 +150,24 @@ describe('BaseList.vue', () => {
 
     const emitObj = wrapper.emitted('bl:add')
     expect(emitObj).toBeTruthy()
+  })
+
+  it('emits "bl:delete" on clicking the delete button', async () => {
+    const wrapper = factory({
+      propsData: { header, list },
+      stubs: ['base-list-item'],
+      localVue,
+      sync: false
+    }, true)
+
+    wrapper.find({ name: 'v-btn' }).trigger('click')
+
+    await wrapper.vm.$nextTick()
+
+    const emitObj = wrapper.emitted('bl:delete')
+    expect(emitObj).toBeTruthy()
+    expect(emitObj.length).toBe(1)
+    expect(emitObj[0][0]).toBeInstanceOf(Event)
   })
 
   it('emits "bl:item-delete" when list item fires "bli:delete"', () => {

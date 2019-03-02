@@ -1,20 +1,23 @@
 <template>
   <v-container fluid>
-    <slot name='header' :header='header' :len='dataList.length' :show-count='showCount'>
-      <div class='headline mb-3 font-weight-light'>
-        {{header}}
-        <v-avatar
-          :color='highlightColor'
-          size='30'
-          class='white--text ml-3'
-          v-if='showCount'
-        >{{dataList.length}}</v-avatar>
-      </div>
+    <slot name='header' :header='header' :len='list.length' :show-count='showCount'>
+      <v-layout class='mx-1'>
+        <v-badge :color='highlightColor'>
+          <template slot='badge' v-if='showCount'>
+            <span>{{list.length}}</span>
+          </template>
+          <span class='headline font-weight-light'>{{header}}</span>
+        </v-badge>
+        <v-spacer></v-spacer>
+        <v-btn flat icon small @click.stop='ev => $emit("bl:delete", ev)'>
+          <v-icon small>close</v-icon>
+        </v-btn>
+      </v-layout>
     </slot>
     <base-list-item
       @bli:click='(data, ev) => onItemClickHandler(item._id, data, ev)'
       @bli:delete='ev => $emit("bl:item-delete", item._id, ev)'
-      v-for='item in dataList'
+      v-for='item in list'
       :key='item._id'
       :title='item.title'
       :type='item.type'
@@ -33,11 +36,6 @@ import BaseListItem from './BaseListItem'
 
 export default {
   components: { BaseListItem },
-  data () {
-    return {
-      dataList: []
-    }
-  },
   props: {
     highlightColor: {
       type: String,
@@ -62,17 +60,6 @@ export default {
     },
     onItemClickHandler (id, data, ev) {
       this.$emit('bl:click', this.list.find(it => it['_id'] === id), ev)
-    }
-  },
-  computed: {
-
-  },
-  created () {
-    this.dataList = this.list.slice()
-  },
-  watch: {
-    list (newv, oldv) {
-      this.dataList = newv.slice()
     }
   }
 }

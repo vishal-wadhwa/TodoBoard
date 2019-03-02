@@ -53,3 +53,4 @@ yarn run test:unit
 [] delete button on board, list, list item
 [] theme color? black?
 [] bug: same type icon all lists
+[] revert padding change ExtNavDrawer.vue

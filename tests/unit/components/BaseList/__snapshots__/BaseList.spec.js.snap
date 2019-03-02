@@ -2,9 +2,10 @@
 
 exports[`BaseList.vue should match snapshot 1`] = `
 <div class="container fluid">
-  <div class="headline mb-3 font-weight-light">
-    List1
-    <div class="v-avatar white--text ml-3 black" style="height: 30px; width: 30px;">3</div>
+  <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">Listxyz</span><span class="v-badge__badge black"><span>3</span></span></span>
+    <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
+      <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
+    </button>
   </div>
   <div title="sanmu" type="list" desc="oh cunihnon vocew lab sirrufoka loj ujo utceb lez ej" tags="fa,jebpu" ribbon-color="black" view="full"></div>
   <div title="iz" type="playlist_play" desc="vuha ogpufub in jufwozi mira ep po gozseic burni zictam" tags="sikgaok,co" ribbon-color="black" view="full"></div>

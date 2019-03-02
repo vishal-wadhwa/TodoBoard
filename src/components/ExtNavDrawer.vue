@@ -5,7 +5,7 @@
     fixed
     clipped
     app
-    class='py-2'
+    class='py-2 pr-2'
     width='280'
   >
     <v-layout column>

@@ -25,7 +25,7 @@
           :key='board._id'
           :to='{name: "home", params: {boardId: board._id}}'
           :title='board.boardName'
-          @click='ev => $emit("end:board-click", board, ev)'
+          @click='ev => $emit("end:board-click", board._id, ev)'
           @mouseover='$set(deleteBtnVisible, board._id, true)'
           @mouseout='deleteBtnVisible[board._id] = false'
         >
@@ -39,7 +39,7 @@
             small
             title
             v-show='deleteBtnVisible[board._id]'
-            @click.prevent.stop='ev => onBoardDelete(board, ev)'
+            @click.prevent.stop='ev => onBoardDelete(board._id, ev)'
           >
             <v-icon small>delete</v-icon>
           </v-btn>
@@ -106,9 +106,9 @@ export default {
       this.newBoardName = ''
       this.errMsg = ''
     },
-    onBoardDelete (board, ev) {
-      delete this.deleteBtnVisible[board._id]
-      this.$emit('end:board-delete', board, ev)
+    onBoardDelete (boardId, ev) {
+      delete this.deleteBtnVisible[boardId]
+      this.$emit('end:board-delete', boardId, ev)
     }
   },
   watch: {

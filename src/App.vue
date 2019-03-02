@@ -61,15 +61,15 @@ export default {
   },
   methods: {
     ...mapActions('board', ['loadBoard', 'createBoard', 'deleteBoard']),
-    async onBoardChange (board, ev) {
-      await this.loadBoard(board._id)
+    async onBoardChange (boardId, ev) {
+      await this.loadBoard(boardId)
     },
     async onBoardCreate (boardName, ev) {
       this.boardForm = false
       await this.createBoard({ boardName })
     },
-    async onBoardDelete (board, ev) {
-      await this.deleteBoard(board._id)
+    async onBoardDelete (boardId, ev) {
+      await this.deleteBoard(boardId)
     }
   }
 }

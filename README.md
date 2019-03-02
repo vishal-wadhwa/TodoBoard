@@ -50,11 +50,11 @@ yarn run test:unit
 [x] change tab icon in index.html
 [x] add better resolution favicon.ico
 [x] clear info on logout
-[] delete button on board, list, list item
+[x] delete button on board, list, list item
 [] theme color? black?
 [] bug: same type icon all lists
 [] revert padding change ExtNavDrawer.vue
-[] ExtNavDrawer.vue should emit only ids
+[x] ExtNavDrawer.vue should emit only ids
 [] ListItem delete on hover only 
 [x] add dummy deletes
 [x] bugfix: _id -> boardId

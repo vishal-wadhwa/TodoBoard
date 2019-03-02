@@ -196,11 +196,11 @@ describe('ExtNavDrawer.vue', () => {
     expect(emitArr.length).toBe(2)
 
     expect(emitArr[0].length).toBe(2)
-    expect(emitArr[0][0]).toEqual(boardList[0])
+    expect(emitArr[0][0]).toEqual(boardList[0]._id)
     expect(emitArr[0][1]).toBeInstanceOf(Event)
 
     expect(emitArr[1].length).toBe(2)
-    expect(emitArr[1][0]).toEqual(boardList[2])
+    expect(emitArr[1][0]).toEqual(boardList[2]._id)
     expect(emitArr[1][1]).toBeInstanceOf(Event)
   })
 
@@ -223,11 +223,11 @@ describe('ExtNavDrawer.vue', () => {
     expect(emitArr.length).toBe(2)
 
     expect(emitArr[0].length).toBe(2)
-    expect(emitArr[0][0]).toEqual(boardList[0])
+    expect(emitArr[0][0]).toEqual(boardList[0]._id)
     expect(emitArr[0][1]).toBeInstanceOf(Event)
 
     expect(emitArr[1].length).toBe(2)
-    expect(emitArr[1][0]).toEqual(boardList[2])
+    expect(emitArr[1][0]).toEqual(boardList[2]._id)
     expect(emitArr[1][1]).toBeInstanceOf(Event)
   })
 

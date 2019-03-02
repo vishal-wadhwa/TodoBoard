@@ -13,8 +13,8 @@ const dummyActions = {
 
     commit('createBoard', npayload)
   },
-  async deleteBoard ({ commit }, payload) {
-    commit('deleteBoard', payload)
+  async deleteBoard ({ commit }, boardId) {
+    commit('deleteBoard', { boardId })
   },
   async createList ({ commit, getters }, payload) {
     const bid = getters.activeBoardId
@@ -23,12 +23,18 @@ const dummyActions = {
 
     commit('createList', npayload)
   },
+  async deleteList ({ commit, getters }, listId) {
+    commit('deleteList', { boardId: getters.activeBoardId, listId })
+  },
   async createListItem ({ commit, getters }, payload) {
     const bid = getters.activeBoardId
     const _id = payload.listId + ':' + new Date().getTime().toString()
     const npayload = { ...payload.listItem, _id, boardId: bid, listId: payload.listId }
 
     commit('createListItem', npayload)
+  },
+  async deleteListItem ({ commit, getters }, payload) {
+    commit('deleteListItem', { boardId: getters.activeBoardId, ...payload })
   }
 }
 

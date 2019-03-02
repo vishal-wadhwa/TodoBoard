@@ -88,6 +88,21 @@ describe('BaseListItem.vue', () => {
     expect(emitObj[0][0]).toEqual(wrapper.props())
   })
 
+  it('emits "bli:delete" when delete button is clicked', () => {
+    const view = 'full'
+    const wrapper = factory({
+      propsData: { title, tags, desc, view },
+      localVue
+    }, true)
+
+    wrapper.find({ name: 'v-btn' }).trigger('click')
+
+    const emitObj = wrapper.emitted('bli:delete')
+    expect(emitObj).toBeTruthy()
+    expect(emitObj.length).toEqual(1)
+    expect(emitObj[0][0]).toBeInstanceOf(Event)
+  })
+
   it('should match full view snapshot', () => {
     const view = 'full'
     const wrapper = factory({

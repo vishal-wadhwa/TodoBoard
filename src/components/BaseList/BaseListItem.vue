@@ -10,12 +10,25 @@
         <slot name='vf-icon' :type='type'>
           <v-icon>{{type}}</v-icon>
         </slot>
-        <v-flex align-self-center class='mt-1 mx-2'>
-          <div class='title font-weight-regular'>
+        <v-flex align-self-center class='mx-2'>
+          <v-flex class='title font-weight-regular'>
             <slot name='vf-title' :title='title' :view='view'>
-              <v-card-title class='pa-0'>{{title}}</v-card-title>
+              <v-card-title class='pa-0'>
+                {{title}}
+                <v-spacer></v-spacer>
+                <v-btn
+                  flat
+                  icon
+                  small
+                  class='ma-0'
+                  color='black'
+                  @click.stop='ev => $emit("bli:delete", ev)'
+                >
+                  <v-icon small>close</v-icon>
+                </v-btn>
+              </v-card-title>
             </slot>
-          </div>
+          </v-flex>
           <v-divider class='my-2' v-if='!isCompactView'></v-divider>
           <v-card-text text-truncate class='ml-1 pa-0' v-if='!isCompactView'>{{desc}}</v-card-text>
           <v-card-text class='pa-0' v-if='!isCompactView'>

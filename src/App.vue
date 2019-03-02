@@ -69,7 +69,7 @@ export default {
       await this.createBoard({ boardName })
     },
     async onBoardDelete (board, ev) {
-      await this.deleteBoard(board)
+      await this.deleteBoard(board._id)
     }
   }
 }

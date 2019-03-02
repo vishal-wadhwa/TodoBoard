@@ -57,4 +57,4 @@ yarn run test:unit
 [] ExtNavDrawer.vue should emit only ids
 [] ListItem delete on hover only 
 [] add dummy deletes
-[] bugfix: _id -> boardId
+[x] bugfix: _id -> boardId

@@ -55,10 +55,10 @@ const localActions = {
 
     commit('createBoard', npayload)
   },
-  async deleteBoard ({ commit }, payload) {
-    const _id = payload._id
+  async deleteBoard ({ commit }, boardId) {
+    const bid = boardId
     const boardItems = storage.readObject('BOARDS', [])
-    const delBIdx = boardItems.findIndex(ID_FIND_CMP(_id))
+    const delBIdx = boardItems.findIndex(ID_FIND_CMP(bid))
 
     boardItems.splice(delBIdx, 1)
 
@@ -68,9 +68,9 @@ const localActions = {
     })
 
     storage.writeObject('BOARDS', bItemsWithoutList)
-    storage.clear('BOARD_DATA_' + _id)
+    storage.clear('BOARD_DATA_' + bid)
 
-    commit('deleteBoard', payload)
+    commit('deleteBoard', { boardId })
   },
   async createList ({ getters, commit }, payload) {
     const bid = getters.activeBoardId

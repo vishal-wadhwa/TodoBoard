@@ -50,11 +50,12 @@ export default {
         return
       }
 
-      const delIdx = state.boards.findIndex(ID_FIND_CMP(payload._id), 1)
+      const delIdx = state.boards.findIndex(ID_FIND_CMP(payload.boardId))
+
+      Vue.notify({ type: 'success', msg: `Board ${state.boards[delIdx].boardName} successfully deleted` })
       state.boards.splice(delIdx, 1)
 
-      Vue.notify({ type: 'success', msg: `Board ${payload.boardName} successfully deleted` })
-      if (payload._id === router.currentRoute.params.boardId) router.push({ name: 'home' })
+      if (payload.boardId === router.currentRoute.params.boardId) router.push({ name: 'home' })
     },
     createList (state, payload) {
       if (payload.err) {

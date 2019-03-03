@@ -2,7 +2,7 @@
   <v-container fluid>
     <slot name='header' :header='header' :len='list.length' :show-count='showCount'>
       <v-layout class='mx-1'>
-        <v-badge :color='highlightColor'>
+        <v-badge :color='highlightColor' class='text--fit'>
           <template slot='badge' v-if='showCount'>
             <span>{{list.length}}</span>
           </template>
@@ -65,4 +65,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.text--fit {
+  word-break: break-all;
+}
 </style>

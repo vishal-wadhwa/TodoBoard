@@ -2,7 +2,7 @@
 
 exports[`BaseList.vue should match snapshot 1`] = `
 <div class="container fluid">
-  <div class="layout mx-1"><span class="v-badge"> <span class="headline font-weight-light">Listxyz</span><span class="v-badge__badge black"><span>3</span></span></span>
+  <div class="layout mx-1"><span class="v-badge text--fit"> <span class="headline font-weight-light">Listxyz</span><span class="v-badge__badge black"><span>3</span></span></span>
     <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light">
       <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">close</i></div>
     </button>

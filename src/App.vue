@@ -3,6 +3,7 @@
     <title-bar
       v-if='$route.name !== "login"'
       title='Todo board'
+      class='primary'
       @tb:log-out='$store.dispatch("login/logout")'
     >
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>

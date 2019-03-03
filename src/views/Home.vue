@@ -9,7 +9,7 @@
       class='pa-0'
     ></board>
     <v-speed-dial v-model='fab' fixed right bottom>
-      <v-btn v-model='fab' slot='activator' color='blue darken-2' fab dark>
+      <v-btn v-model='fab' slot='activator' class='secondary' fab dark>
         <v-icon>add</v-icon>
         <v-icon>close</v-icon>
       </v-btn>

@@ -4,7 +4,11 @@ import 'vuetify/src/stylus/app.styl'
 import Notify from './Notify'
 
 Vue.use(Vuetify, {
-  iconfont: 'md'
+  iconfont: 'md',
+  theme: {
+    primary: '#03a9f4',
+    secondary: '#000000'
+  }
 })
 
 Vue.use(Notify)

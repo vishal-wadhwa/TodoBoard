@@ -5,7 +5,7 @@
     fixed
     clipped
     app
-    class='py-2 pr-2'
+    class='pa-2'
     width='280'
   >
     <v-layout column>
@@ -21,6 +21,7 @@
 
         <v-list-tile
           avatar
+          active-class='primary lighten-3'
           v-for='board in boardList'
           :key='board._id'
           :to='{name: "home", params: {boardId: board._id}}'
@@ -32,7 +33,7 @@
           <v-list-tile-avatar>
             <v-icon>chrome_reader_mode</v-icon>
           </v-list-tile-avatar>
-          <v-list-tile-title v-text='board.boardName'></v-list-tile-title>
+          <v-list-tile-title class='font-weight-bold' v-text='board.boardName'></v-list-tile-title>
           <v-btn
             flat
             icon

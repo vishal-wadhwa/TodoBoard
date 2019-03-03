@@ -51,7 +51,7 @@ yarn run test:unit
 [x] add better resolution favicon.ico
 [x] clear info on logout
 [x] delete button on board, list, list item
-[] theme color? black?
+[x] theme color? black?
 [x] bug: same type icon all lists
 [x] revert padding change ExtNavDrawer.vue
 [x] ExtNavDrawer.vue should emit only ids

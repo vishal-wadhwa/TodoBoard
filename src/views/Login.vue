@@ -13,7 +13,7 @@
           <v-form class='mx-4 mt-5' style='width: 100%;' ref='form'>
             <v-text-field
               v-model.trim='fullname'
-              color='black'
+              color='primary darken-2'
               label='Full Name'
               type='text'
               :rules='rules.fullname'
@@ -24,7 +24,7 @@
             ></v-text-field>
             <v-text-field
               v-model.trim='email'
-              color='black'
+              color='primary darken-2'
               label='Email ID'
               type='email'
               :rules='rules.email'
@@ -33,7 +33,7 @@
             ></v-text-field>
             <v-text-field
               v-model='password'
-              color='black'
+              color='primary darken-2'
               label='Password'
               :type='showPass ? "text" : "password"'
               :rules='rules.password'
@@ -60,9 +60,8 @@
               </v-layout>
               <v-layout align-end column>
                 <v-btn
-                  dark
                   round
-                  class='ma-0'
+                  class='ma-0 secondary'
                   @click='onSubmit'
                   :loading='authenticating'
                   :small='$vuetify.breakpoint.xs'

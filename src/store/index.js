@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import board from './board'
 import login from './login'
+import progress from './progress'
 
 Vue.use(Vuex)
 
@@ -32,6 +33,7 @@ export default new Vuex.Store({
   },
   modules: {
     board,
-    login
+    login,
+    progress
   }
 })

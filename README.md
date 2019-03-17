@@ -43,7 +43,10 @@ yarn run test:unit
 [x] notifications
 [x] logout button at place of 3 dots
 [] image upload
-[] progress bar
+[x] progress bar
+[] login on enter press
+[] remove unnecessary fn wrapper login/index
+[] watch on activeBoard to trigger loadBoard
 [x] move add buttons to home
 [x] title bar logo replace
 [x] new board auto open sidebar

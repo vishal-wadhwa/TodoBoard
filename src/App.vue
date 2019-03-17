@@ -25,18 +25,27 @@
       @end:bname-save='onBoardCreate'
     ></ext-nav-drawer>
     <v-content>
+      <v-progress-linear
+        query
+        class='ma-0'
+        height='4'
+        style='position: fixed;'
+        :active='active'
+        :color='color'
+        :indeterminate='indeterminate'
+        :value='progressVal'
+      ></v-progress-linear>
       <router-view/>
     </v-content>
     <notify bottom auto-height></notify>
   </v-app>
 </template>
-
 <script>
 import ExtNavDrawer from '@/components/ExtNavDrawer'
 import TitleBar from '@/components/TitleBar'
 import AppLogo from '@/components/AppLogo'
 
-import { mapActions, mapGetters } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -58,7 +67,9 @@ export default {
         this.$store.commit('setBoardFormState', val)
       }
     },
-    ...mapGetters('board', ['boardNames'])
+    ...mapGetters('board', ['boardNames']),
+    ...mapState('progress', ['active', 'progressVal', 'color']),
+    ...mapGetters('progress', ['indeterminate'])
   },
   methods: {
     ...mapActions('board', ['loadBoard', 'createBoard', 'deleteBoard']),

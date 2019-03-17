@@ -19,7 +19,7 @@ const router = new Router({
       name: 'home',
       component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
       meta: { requiresAuth: true },
-      beforeEnter: (to, from, next) => {
+      beforeEnter: async (to, from, next) => {
         if (!store.state.board.boards.some(v => v._id === to.params.boardId)) {
           const cfg = { name: 'home' }
 
@@ -34,7 +34,10 @@ const router = new Router({
             if (cfg.params) next(cfg)
             else next()
           }
-        } else next()
+        } else {
+          await store.dispatch('board/loadBoard', to.params.boardId)
+          next()
+        }
       }
     }
   ]

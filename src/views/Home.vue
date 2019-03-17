@@ -115,10 +115,7 @@ export default {
       return this.$store.state.board.boards
     }
   },
-  async created () {
-    if (this.activeBoard) { await this.$store.dispatch('board/loadBoard', this.activeBoard._id) }
-  },
-  beforeRouteUpdate (to, from, next) {
+  async beforeRouteUpdate (to, from, next) {
     if (!this.boards.some(v => v._id === to.params.boardId)) {
       const cfg = { name: 'home' }
 
@@ -133,7 +130,10 @@ export default {
         if (cfg.params) next(cfg)
         else next()
       }
-    } else next()
+    } else {
+      await this.$store.dispatch('board/loadBoard', to.params.boardId)
+      next()
+    }
   }
 }
 </script>

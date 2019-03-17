@@ -17,7 +17,6 @@
       v-if='$route.name !== "login"'
       v-model='drawer'
       :board-list='boardNames'
-      @end:board-click='onBoardChange'
       @end:board-delete='onBoardDelete'
       :show-new-field-box='boardForm'
       @end:bname-discard='boardForm = false'
@@ -72,10 +71,7 @@ export default {
     ...mapGetters('progress', ['indeterminate'])
   },
   methods: {
-    ...mapActions('board', ['loadBoard', 'createBoard', 'deleteBoard']),
-    async onBoardChange (boardId, ev) {
-      await this.loadBoard(boardId)
-    },
+    ...mapActions('board', ['createBoard', 'deleteBoard']),
     async onBoardCreate (boardName, ev) {
       this.boardForm = false
       await this.createBoard({ boardName })

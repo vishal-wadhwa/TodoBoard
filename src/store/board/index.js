@@ -26,9 +26,8 @@ export default {
     }
   },
   mutations: {
-    setActiveBoard (state, { boardId, data }) {
+    loadBoard (state, { boardId, data }) {
       state.boards.find(ID_FIND_CMP(boardId)).lists = data
-      router.push({ name: 'home', params: { boardId } })
     },
     createBoard (state, payload) {
       if (payload.err) {

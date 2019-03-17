@@ -46,7 +46,7 @@ yarn run test:unit
 [x] progress bar
 [] login on enter press
 [x] remove unnecessary fn wrapper login/index
-[] watch on activeBoard to trigger loadBoard
+[x] watch on activeBoard to trigger loadBoard: updated beforeRouteUpdate&Enter
 [x] move add buttons to home
 [x] title bar logo replace
 [x] new board auto open sidebar

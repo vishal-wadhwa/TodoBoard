@@ -5,7 +5,7 @@ const ID_FIND_CMP = tfId => ob => ob._id === tfId
 // dummy interface, can be replaced with other actions-set
 const dummyActions = {
   async loadBoard ({ state, commit }, boardId) {
-    commit('setActiveBoard', { boardId, data: state.boards.find(ID_FIND_CMP(boardId)).lists })
+    commit('loadBoard', { boardId, data: state.boards.find(ID_FIND_CMP(boardId)).lists })
   },
   async createBoard ({ commit }, payload) {
     const _id = new Date().getTime().toString()
@@ -57,7 +57,7 @@ const localActions = {
       payload.data = storage.readObject('BOARD_DATA_' + boardId, [])
     }
 
-    commit('setActiveBoard', payload)
+    commit('loadBoard', payload)
   },
   async createBoard ({ commit }, payload) {
     const _id = new Date().getTime().toString()

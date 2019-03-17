@@ -6,7 +6,7 @@ import router from '@/router'
 export default {
   namespaced: true,
   state: {
-    user: (() => storage.readObject('user'))()
+    user: storage.readObject('user')
   },
   getters: {
     isLoggedIn (state) {

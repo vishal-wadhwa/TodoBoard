@@ -19,6 +19,7 @@
               :rules='rules.fullname'
               validate-on-blur
               ref='fullNameField'
+              @keydown.enter='ev => onSubmit(ev)'
               autofocus
               v-if='curState === STATE_SIGN_UP'
             ></v-text-field>
@@ -30,6 +31,7 @@
               :rules='rules.email'
               validate-on-blur
               ref='emailField'
+              @keydown.enter='ev => onSubmit(ev)'
             ></v-text-field>
             <v-text-field
               v-model='password'
@@ -38,6 +40,7 @@
               :type='showPass ? "text" : "password"'
               :rules='rules.password'
               validate-on-blur
+              @keydown.enter='ev => onSubmit(ev)'
               :append-icon='showPass ? "visibility_off" : "visibility"'
               counter
               hint='Password must have a minimum of 8 letters'

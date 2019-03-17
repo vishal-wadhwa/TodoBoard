@@ -44,7 +44,7 @@ yarn run test:unit
 [x] logout button at place of 3 dots
 [] image upload
 [x] progress bar
-[] login on enter press
+[x] login on enter press
 [x] remove unnecessary fn wrapper login/index
 [x] watch on activeBoard to trigger loadBoard: updated beforeRouteUpdate&Enter
 [x] move add buttons to home

@@ -4019,6 +4019,41 @@ filename-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
   integrity sha1-wcS5vuPglyXdsQa3XB4wH+LxiyY=
 
+filepond-plugin-file-validate-size@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-file-validate-size/-/filepond-plugin-file-validate-size-2.1.1.tgz#b44f04a575d3eda38c184ba38cfa18b2420858e7"
+  integrity sha512-5SoykRvFaZ2h65JpjyKXGnvTUeNvMIjfNm2nrGsVIYRPVFguNeO7Kp/jBMhIVuhsF44gIR/ETLuazEXD87tLdg==
+
+filepond-plugin-file-validate-type@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-file-validate-type/-/filepond-plugin-file-validate-type-1.2.2.tgz#8ac215b893b6beef28d82874cddcff6cd3069451"
+  integrity sha512-ZBVU9a18EWhfk3kkqULp7GX3KcSSAlZbLFqlquJ5VTerecL1BkUlQ/cpFJ5EucAdJ1Qdi1zEyPQ+e7JLxL+5Rg==
+
+filepond-plugin-image-exif-orientation@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-exif-orientation/-/filepond-plugin-image-exif-orientation-1.0.4.tgz#d1bc57fcf4341c3cccd018a3083833919b52cd0d"
+  integrity sha512-wMpQ15g4s5ar0oOiqOdR+kLSzjR2/HU1iw9MWx59WDlCBZgvDUIHTzuTsyIJRPASZ5R9wrHv/pmJINuMoTXrSw==
+
+filepond-plugin-image-preview@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-preview/-/filepond-plugin-image-preview-4.0.3.tgz#9e8a6561455751498da29e4a6501ab828dc0d4a2"
+  integrity sha512-umWUAM9Jd2W66/bcT/KWxBh1mmcSJxYi/L0aSxJSRnEebOGtJlNZ3y9nnB6MMNmt+Ybi9ttto6mmc4OPyfbfuQ==
+
+filepond-plugin-image-resize@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-resize/-/filepond-plugin-image-resize-2.0.2.tgz#be29db736f2467f9b8457f9731ae08cd1b0b762b"
+  integrity sha512-UjM+dru03/OtWNSYql+sBj3bQJGnU19nwfCFeH8rXZj5pUzvxY0myjjQ0GQllugkGQld4igEGMyBeTJOjx0LsQ==
+
+filepond-plugin-image-validate-size@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/filepond-plugin-image-validate-size/-/filepond-plugin-image-validate-size-1.2.1.tgz#ddf21bd9e75ea6d577f33b1fd7c96cd85e7117cd"
+  integrity sha512-aWa7QX9RwELKXKEFOaF+tC97AtK1djf8R73CE5ayeGsu1p+ujl5l6bAvMqsQ3ytmPm8S8LO/w+jB+dQkQif4UA==
+
+filepond@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/filepond/-/filepond-4.2.0.tgz#93852e933cc8acd9a60efeb5ef93fbbff15d1fef"
+  integrity sha512-JTSvxTQGbCXMZGoPOIjCKImv+Al3Y5z3f6gRoUGlQdqpnMHdnwOV0WG3hRCVBDN64ctAN3pgKtofkWfsnwwoTA==
+
 fileset@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/fileset/-/fileset-2.0.3.tgz#8e7548a96d3cc2327ee5e674168723a333bba2a0"
@@ -9271,6 +9306,11 @@ vue-eslint-parser@^4.0.2:
     espree "^4.1.0"
     esquery "^1.0.1"
     lodash "^4.17.11"
+
+vue-filepond@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/vue-filepond/-/vue-filepond-5.0.0.tgz#c3d9362fc41ee9dcb44f7962c1d41ff8e29e8cd2"
+  integrity sha512-8ka3ms8WU0vNQKSL1jgF24tCQUw+pA0CLgRRHe9AZ3l1yrehSXGEZZBQbC374PgzFW8CkJOr3cpM+7ZBNSVBvQ==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.1"

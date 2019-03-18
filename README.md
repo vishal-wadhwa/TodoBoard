@@ -43,6 +43,8 @@ yarn run test:unit
 [x] notifications
 [x] logout button at place of 3 dots
 [] image upload
+[] display username
+[] show github link
 [x] progress bar
 [x] login on enter press
 [x] remove unnecessary fn wrapper login/index

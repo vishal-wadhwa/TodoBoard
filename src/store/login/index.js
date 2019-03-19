@@ -11,6 +11,12 @@ export default {
   getters: {
     isLoggedIn (state) {
       return !!state.user && !!state.user.fullname && !!state.user.email && process.env.NODE_ENV !== 'production'
+    },
+    fullname (state) {
+      return state.user.fullname
+    },
+    email (state) {
+      return state.user.email
     }
   },
   mutations: {

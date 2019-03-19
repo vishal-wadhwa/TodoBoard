@@ -43,7 +43,7 @@ yarn run test:unit
 [x] notifications
 [x] logout button at place of 3 dots
 [x] image upload
-[] display username
+[x] display username
 [] show github link
 [x] progress bar
 [x] login on enter press

@@ -42,7 +42,7 @@ yarn run test:unit
 [x] adjust padding for lists
 [x] notifications
 [x] logout button at place of 3 dots
-[] image upload
+[x] image upload
 [] display username
 [] show github link
 [x] progress bar

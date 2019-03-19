@@ -17,8 +17,11 @@
       v-if='$route.name !== "login"'
       v-model='drawer'
       :board-list='boardNames'
-      @end:board-delete='onBoardDelete'
+      :default-image-src='defImgPath'
       :show-new-field-box='boardForm'
+      @end:img-error='msg => this.$notify({type: "error", msg})'
+      @end:img-warning='msg => this.$notify({type: "warning", msg})'
+      @end:board-delete='onBoardDelete'
       @end:bname-discard='boardForm = false'
       @end:blur='boardForm = false'
       @end:bname-save='onBoardCreate'
@@ -49,6 +52,11 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   name: 'App',
   components: { ExtNavDrawer, TitleBar, AppLogo },
+  data () {
+    return {
+      defImgPath: require('./assets/img/avatar.png')
+    }
+  },
   computed: {
     drawer: {
       get () {

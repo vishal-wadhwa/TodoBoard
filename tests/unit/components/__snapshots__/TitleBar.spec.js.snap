@@ -4,12 +4,12 @@ exports[`TitleBar.vue should match snapshot 1`] = `
 <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
   <div class="v-toolbar__content" style="height: 64px;">
     <div class="v-toolbar__title headline text-uppercase"><span>TITLE NAME</span></div>
-    <div class="spacer"></div> <span class="title font-weight-light font-italic">John Doe</span> <a href="https://github.com/vishal-wadhwa" target="_blank" class="mr-0 v-btn v-btn--flat v-btn--floating v-btn--small theme--light">
+    <div class="spacer"></div> <span class="title font-weight-light font-italic white--text">John Doe</span> <a href="https://github.com/vishal-wadhwa" target="_blank" class="mr-0 v-btn v-btn--flat v-btn--floating v-btn--small theme--light">
       <div class="v-btn__content">
         <div class="v-avatar" style="height: 20px; width: 20px;"><img src="[object Object]" alt="github"></div>
       </div>
     </a> <button type="button" class="ml-0 v-btn v-btn--flat v-btn--floating v-btn--small theme--light" title="Log Out">
-      <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">power_settings_new</i></div>
+      <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light white--text">power_settings_new</i></div>
     </button>
   </div>
 </nav>

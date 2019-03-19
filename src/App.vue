@@ -8,7 +8,7 @@
       @tb:log-out='$store.dispatch("login/logout")'
     >
       <v-toolbar-side-icon @click='drawer = !drawer' slot='toolbar-icon'>
-        <v-icon color='black'>{{ drawer ? 'close' : 'menu'}}</v-icon>
+        <v-icon color='white'>{{ drawer ? 'close' : 'menu'}}</v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title slot='toolbar-heading'>
         <app-logo color='black' size='2rem'></app-logo>

@@ -23,6 +23,7 @@ describe('TitleBar.vue', () => {
   })
 
   const title = 'TITLE NAME'
+  const fullname = 'John Doe'
 
   it('renders title from props', () => {
     const wrapper = factory({
@@ -32,12 +33,20 @@ describe('TitleBar.vue', () => {
     expect(wrapper.text()).toMatch(title)
   })
 
+  it('renders fullname from props', () => {
+    const wrapper = factory({
+      propsData: { fullname },
+      localVue
+    })
+    expect(wrapper.text()).toMatch(fullname)
+  })
+
   it('emits "tb:log-out" when log out button is clicked', () => {
     const wrapper = factory({
       localVue
     }, true)
 
-    const triggerBtn = wrapper.find({ name: 'v-btn' })
+    const triggerBtn = wrapper.findAll({ name: 'v-btn' }).at(1)
     triggerBtn.trigger('click')
 
     const emitObj = wrapper.emitted('tb:log-out')
@@ -47,7 +56,7 @@ describe('TitleBar.vue', () => {
   it('should match snapshot', () => {
     const wrapper = factory({
       localVue,
-      propsData: { title }
+      propsData: { title, fullname }
     }, true)
 
     expect(wrapper.html()).toMatchSnapshot()

@@ -8,7 +8,13 @@
     </slot>
     <v-spacer/>
     <slot name='toolbar-content-right'>
-      <v-btn fab small flat title='Log Out' @click='ev => $emit("tb:log-out", ev)'>
+      <span class='title font-weight-light font-italic'>{{fullname}}</span>
+      <v-btn fab small flat href='https://github.com/vishal-wadhwa' target='_blank' class='mr-0'>
+        <v-avatar size='20px'>
+          <img :src='require("@/assets/img/github-logo.png")' alt='github'>
+        </v-avatar>
+      </v-btn>
+      <v-btn fab small flat title='Log Out' class='ml-0' @click='ev => $emit("tb:log-out", ev)'>
         <v-icon>power_settings_new</v-icon>
       </v-btn>
     </slot>
@@ -17,7 +23,8 @@
 <script>
 export default {
   props: {
-    title: String
+    title: String,
+    fullname: String
   }
 }
 </script>

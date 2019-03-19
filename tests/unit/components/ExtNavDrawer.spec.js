@@ -1,10 +1,12 @@
-import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
+import { shallowMount, createLocalVue, mount, config } from '@vue/test-utils'
 import ExtNavDrawer from '@/components/ExtNavDrawer'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(Vuetify)
+
+config.logModifiedComponents = false
 
 describe('ExtNavDrawer.vue', () => {
   // required to vuetify [warn] in test
@@ -235,6 +237,7 @@ describe('ExtNavDrawer.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { showNewFieldBox: true },
+      stubs: ['profile-picture'],
       sync: false
     }, true)
 
@@ -256,6 +259,7 @@ describe('ExtNavDrawer.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { showNewFieldBox: true },
+      stubs: ['profile-picture'],
       sync: false
     }, true)
 
@@ -277,6 +281,7 @@ describe('ExtNavDrawer.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { showNewFieldBox: true },
+      stubs: ['profile-picture'],
       sync: false
     }, true)
 
@@ -297,6 +302,7 @@ describe('ExtNavDrawer.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { showNewFieldBox: true },
+      stubs: ['profile-picture'],
       sync: false
     }, true)
 
@@ -311,10 +317,43 @@ describe('ExtNavDrawer.vue', () => {
     expect(emitArr[0][0]).toBeInstanceOf(Event)
   })
 
+  it('emits "end:img-error"', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    })
+
+    const eMsg = 'Error ABC: XYZ'
+    const profilePic = wrapper.find('profilepicture-stub')
+    profilePic.vm.$emit('pp:error', eMsg)
+
+    const emitArr = wrapper.emitted('end:img-error')
+    expect(emitArr.length).toBe(1)
+    expect(emitArr[0].length).toBe(1)
+    expect(emitArr[0][0]).toBe(eMsg)
+  })
+
+  it('emits "end:img-warning"', () => {
+    const wrapper = factory({
+      localVue,
+      sync: false
+    })
+
+    const eMsg = 'Error ABC: XYZ'
+    const profilePic = wrapper.find('profilepicture-stub')
+    profilePic.vm.$emit('pp:warning', eMsg)
+
+    const emitArr = wrapper.emitted('end:img-warning')
+    expect(emitArr.length).toBe(1)
+    expect(emitArr[0].length).toBe(1)
+    expect(emitArr[0][0]).toBe(eMsg)
+  })
+
   it('does not emit "end:bname-save" and goes into error state when boardName is empty', async () => {
     const wrapper = factory({
       localVue,
       propsData: { showNewFieldBox: true },
+      stubs: ['profile-picture'],
       sync: false
     }, true)
 

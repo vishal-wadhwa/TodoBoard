@@ -10,9 +10,12 @@
   >
     <v-layout column>
       <v-flex class='text-xs-center'>
-        <v-avatar size='200'>
-          <img src='https://picsum.photos/300/?random' class='img-avatar--border'>
-        </v-avatar>
+        <profile-picture
+          :default-image-src='defaultImageSrc'
+          :server-config='serverConfig'
+          @pp:error='msg => $emit("end:img-error", msg)'
+          @pp:warning='msg => $emit("end:img-warning", msg)'
+        ></profile-picture>
       </v-flex>
       <v-list subheader dense>
         <v-list-tile>
@@ -66,7 +69,10 @@
   </v-navigation-drawer>
 </template>
 <script>
+import ProfilePicture from './ProfilePicture'
+
 export default {
+  components: { ProfilePicture },
   model: {
     prop: 'state',
     event: 'end:change'
@@ -83,7 +89,9 @@ export default {
     showNewFieldBox: {
       type: Boolean,
       default: false
-    }
+    },
+    defaultImageSrc: String,
+    serverConfig: Object
   },
   data () {
     return {
@@ -122,9 +130,4 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.img-avatar {
-  &--border {
-    border: 2px solid black;
-  }
-}
 </style>

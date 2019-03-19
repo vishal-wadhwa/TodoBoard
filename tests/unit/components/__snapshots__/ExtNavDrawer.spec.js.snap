@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`] = `
-<aside class="py-2 pr-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+<aside class="pa-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
   <div class="layout column">
     <div class="flex text-xs-center">
-      <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
+      <div class="filepond--wrapper" image-validate-size-min-width="10" image-validate-size-min-height="10" label-idle="<span class=&quot;filepond--label-action&quot;>Upload</span> a profile picture" max-file-size="1MB" name="profile-pic" style-panel-layout="compact circle" style-load-indicator-position="center bottom" style-progress-indicator-position="right bottom" style-button-process-item-position="right bottom" style-button-remove-item-position="center bottom" accepted-file-types="image/jpeg,image/png" files="" image-preview-height="190" image-resize-target-width="200" image-resize-target-height="200"><input type="file"></div>
     </div>
     <div class="v-list v-list--dense v-list--subheader theme--light">
       <div>
@@ -17,7 +17,7 @@ exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="">
+          <div class="v-list__tile__title font-weight-bold">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -27,7 +27,7 @@ exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -37,7 +37,7 @@ exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -67,10 +67,10 @@ exports[`ExtNavDrawer.vue should match snapshot when delete button is visible 1`
 `;
 
 exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1`] = `
-<aside class="py-2 pr-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+<aside class="pa-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
   <div class="layout column">
     <div class="flex text-xs-center">
-      <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
+      <div class="filepond--wrapper" image-validate-size-min-width="10" image-validate-size-min-height="10" label-idle="<span class=&quot;filepond--label-action&quot;>Upload</span> a profile picture" max-file-size="1MB" name="profile-pic" style-panel-layout="compact circle" style-load-indicator-position="center bottom" style-progress-indicator-position="right bottom" style-button-process-item-position="right bottom" style-button-remove-item-position="center bottom" accepted-file-types="image/jpeg,image/png" files="" image-preview-height="190" image-resize-target-width="200" image-resize-target-height="200"><input type="file"></div>
     </div>
     <div class="v-list v-list--dense v-list--subheader theme--light">
       <div>
@@ -83,7 +83,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -93,7 +93,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -103,7 +103,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -133,10 +133,10 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is not visible 1
 `;
 
 exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] = `
-<aside class="py-2 pr-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
+<aside class="pa-2 v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--fixed v-navigation-drawer--is-mobile v-navigation-drawer--open theme--light" style="height: 100%; margin-top: 0px; max-height: calc(100% - 0px); transform: translateX(0px); width: 280px;">
   <div class="layout column">
     <div class="flex text-xs-center">
-      <div class="v-avatar" style="height: 200px; width: 200px;"><img src="https://picsum.photos/300/?random" class="img-avatar--border"></div>
+      <div class="filepond--wrapper" image-validate-size-min-width="10" image-validate-size-min-height="10" label-idle="<span class=&quot;filepond--label-action&quot;>Upload</span> a profile picture" max-file-size="1MB" name="profile-pic" style-panel-layout="compact circle" style-load-indicator-position="center bottom" style-progress-indicator-position="right bottom" style-button-process-item-position="right bottom" style-button-remove-item-position="center bottom" accepted-file-types="image/jpeg,image/png" files="" image-preview-height="190" image-resize-target-width="200" image-resize-target-height="200"><input type="file"></div>
     </div>
     <div class="v-list v-list--dense v-list--subheader theme--light">
       <div>
@@ -149,7 +149,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] =
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjkgh1</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -159,7 +159,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] =
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhv2</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>
@@ -169,7 +169,7 @@ exports[`ExtNavDrawer.vue should match snapshot when text field is visible 1`] =
           <div class="v-list__tile__avatar">
             <div class="v-avatar" style="height: 40px; width: 40px;"><i aria-hidden="true" class="v-icon material-icons theme--light">chrome_reader_mode</i></div>
           </div>
-          <div class="v-list__tile__title">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
+          <div class="v-list__tile__title font-weight-bold">bjhvkjh3</div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--small theme--light" title="" style="display: none;">
             <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 16px;">delete</i></div>
           </button>
         </router-link-stub>

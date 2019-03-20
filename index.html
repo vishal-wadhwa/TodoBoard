@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/TodoBoard/favicon.ico><title>TodoBoard</title><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Material+Icons"><script>// Single Page Apps for GitHub Pages
+    // https://github.com/rafrex/spa-github-pages
+    // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+    // ----------------------------------------------------------------------
+    // This script checks to see if a redirect is present in the query string
+    // and converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function (l) {
+      if (l.search) {
+        var q = {};
+        l.search.slice(1).split('&').forEach(function (v) {
+          var a = v.split('=');
+          q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+        });
+        if (q.p !== undefined) {
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + (q.p || '') +
+            (q.q ? ('?' + q.q) : '') +
+            l.hash
+          );
+        }
+      }
+    }(window.location))</script><link href=/TodoBoard/css/home.be50e3f9.css rel=prefetch><link href=/TodoBoard/js/home.816414e6.js rel=prefetch><link href=/TodoBoard/css/app.8fe4d4d4.css rel=preload as=style><link href=/TodoBoard/css/chunk-vendors.2b25c2b9.css rel=preload as=style><link href=/TodoBoard/js/app.86d24971.js rel=preload as=script><link href=/TodoBoard/js/chunk-vendors.57096ac2.js rel=preload as=script><link href=/TodoBoard/css/chunk-vendors.2b25c2b9.css rel=stylesheet><link href=/TodoBoard/css/app.8fe4d4d4.css rel=stylesheet></head><body><noscript><strong>We're sorry but TodoBoard doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/TodoBoard/js/chunk-vendors.57096ac2.js></script><script src=/TodoBoard/js/app.86d24971.js></script></body></html>

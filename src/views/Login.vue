@@ -53,12 +53,14 @@
                   title='Google'
                   text-color='#757575'
                   btn-bg='white'
+                  @click.native='$notify({type: "info", msg: "Dummy button"})'
                 ></o-auth-login-btn>
                 <o-auth-login-btn
                   :icon-src='require("@/assets/svg/guest_avatar.svg")'
                   title='Guest'
                   btn-bg='rgba(244, 180, 0, 0.5)'
                   icon-bg='rgba(244, 180, 0, 1)'
+                  @click.native='$notify({type: "info", msg: "Dummy button"})'
                 ></o-auth-login-btn>
               </v-layout>
               <v-layout align-end column>
@@ -88,7 +90,7 @@
   </v-container>
 </template>
 <script>
-// https://dribbble.com/shots/3586598-Bank-login-panel
+
 import AppLogo from '../components/AppLogo'
 import OAuthLoginBtn from '../components/OAuthLoginBtn'
 
@@ -141,7 +143,13 @@ export default {
       }
       this.authenticating = false
     },
-    ...mapActions('login', ['login', 'signUp'])
+    ...mapActions('login', ['login', 'signUp', 'logout'])
+  },
+  async created () {
+    await this.logout()
+  },
+  mounted () {
+    this.$notify({ type: 'warning', msg: 'This is a practice project and works on browser localStorage with dummy login. Just signup with any credentials.' })
   }
 }
 </script>

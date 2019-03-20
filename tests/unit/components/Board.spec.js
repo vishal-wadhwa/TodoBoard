@@ -208,7 +208,7 @@ describe('Board.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { boardName, lists },
-      stubs: { 'base-list-item': true },
+      stubs: { 'base-list-item': true, 'base-list': true },
       sync: false
     }, true)
 
@@ -219,7 +219,7 @@ describe('Board.vue', () => {
     const wrapper = factory({
       localVue,
       propsData: { boardName, lists },
-      stubs: { 'base-list-item': true },
+      stubs: { 'base-list-item': true, 'base-list': true },
       sync: false
     }, true)
 

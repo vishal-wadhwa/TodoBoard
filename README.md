@@ -18,6 +18,14 @@ Since, this is just a Vuejs try-out project, rendered as a static site, there ar
 4. Board data **is preserved** across different signups. So, board data goes nowhere.
 5. You can upload a profile picture but it is not uploaded anywhere.
 
+## Screenshots
+- Login
+![login](./screenshots/login.png)
+- Home1
+![home1](./screenshots/home1.png)
+- Home2
+![home2](./screenshots/home2.png)
+
 ## Inspiration
 - [Home](https://dribbble.com/shots/5421211-Progress-Board-Interface-for-Education-Platform/attachments)
 - [Login](https://dribbble.com/shots/3586598-Bank-login-panel)

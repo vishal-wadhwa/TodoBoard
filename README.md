@@ -1,5 +1,27 @@
 # TodoBoard
-Inspiration: [this](https://dribbble.com/shots/5421211-Progress-Board-Interface-for-Education-Platform/attachments)
+This is a simple todolist app I built in my free time where you can categorize your lists into what are called boards.
+
+Say, for example, you can maintain different lists for the works that need to be done at your workplace, home,
+college, etc. Within each board multiple lists can be created, say, for kitchen, for bedroom, for bathroom,
+for repairs, so on and so forth.
+
+You can visit [this]() link to try it out.
+
+**Note**: I tried to make it mobile compatible. Please try on your mobiles too. :p
+
+Since, this is just a Vuejs try-out project, rendered as a static site, there are some things to keep in mind.
+
+### Things to keep in mind:
+1. There can be bugs.
+2. There is no server linked login mechanism. Just signup using random details.
+3. Your boards are saved in browser localStorage.
+4. Board data **is preserved** across different signups. So, board data goes nowhere.
+5. You can upload a profile picture but it is not uploaded anywhere.
+
+## Inspiration
+- [Home](https://dribbble.com/shots/5421211-Progress-Board-Interface-for-Education-Platform/attachments)
+- [Login](https://dribbble.com/shots/3586598-Bank-login-panel)
+
 
 ## Project setup
 ```
@@ -16,11 +38,6 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
 ### Lints and fixes files
 ```
 yarn run lint
@@ -30,36 +47,3 @@ yarn run lint
 ```
 yarn run test:unit
 ```
-
-### Pending changes:
-[x] No empty tags. No empty fields anywhere also add unit tests for the same.
-[x] Board display should be horizontally not aligned.
-[x] Color select on enter or space click.
-[x] Rename project to TODO board.
-[x] Fix focus all forms
-[x] create new board form
-[x] small buttons:save,discard on breakpoint
-[x] adjust padding for lists
-[x] notifications
-[x] logout button at place of 3 dots
-[x] image upload
-[x] display username
-[] show github link
-[x] progress bar
-[x] login on enter press
-[x] remove unnecessary fn wrapper login/index
-[x] watch on activeBoard to trigger loadBoard: updated beforeRouteUpdate&Enter
-[x] move add buttons to home
-[x] title bar logo replace
-[x] new board auto open sidebar
-[x] change tab icon in index.html
-[x] add better resolution favicon.ico
-[x] clear info on logout
-[x] delete button on board, list, list item
-[x] theme color? black?
-[x] bug: same type icon all lists
-[x] revert padding change ExtNavDrawer.vue
-[x] ExtNavDrawer.vue should emit only ids
-[x] ListItem delete on hover only 
-[x] add dummy deletes
-[x] bugfix: _id -> boardId
